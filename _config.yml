@@ -1,0 +1,26 @@
+title: AustinElite
+description: Java Backend Engineer and AI Agent Developer
+url: https://austinelite.github.io
+baseurl: ""
+timezone: Asia/Shanghai
+lang: zh-CN
+permalink: /articles/:title/
+markdown: kramdown
+highlighter: rouge
+future: false
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: Austin
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+

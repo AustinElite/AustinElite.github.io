@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#05070b">
+    <meta name="robots" content="noindex,nofollow">
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
+    <title>AustinElite Writing Console</title>
+    <script>
+      (() => {
+        const saved = localStorage.getItem("austinelite-theme");
+        document.documentElement.dataset.theme = saved || "dark";
+      })();
+    </script>
+  </head>
+  <body data-page="admin">
+    <main class="admin-shell">
+      <header class="admin-header">
+        <a class="admin-brand" href="/">
+          <strong>AUSTINELITE</strong>
+          <span data-i18n="admin.title">文章写作控制台</span>
+        </a>
+        <div class="connection-bar" aria-label="发布状态" data-i18n-aria="admin.status.aria">
+          <span class="connection-chip"><i class="status-dot" aria-hidden="true"></i> SAFE LOCAL MODE</span>
+          <span class="connection-chip">BRANCH <strong style="color:var(--cyan)">main</strong></span>
+          <span class="connection-chip">TARGET <strong>_posts/...</strong></span>
+        </div>
+        <div class="admin-controls">
+          <button class="control-button" id="language-toggle" type="button" aria-label="Switch to English">
+            中 / EN
+          </button>
+          <button class="control-button" id="theme-toggle" type="button" aria-label="切换到亮色主题" aria-pressed="true">
+            <span class="theme-icon" aria-hidden="true">☀</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="admin-grid">
+        <section class="admin-column">
+          <div class="admin-column-header">
+            <span data-i18n="admin.section.new">01 / NEW ARTICLE</span>
+            <span id="draft-state" data-i18n="admin.section.ready">READY</span>
+          </div>
+          <form class="admin-form" id="article-form">
+            <div class="field">
+              <label for="article-title" data-i18n="admin.label.title">标题 / TITLE</label>
+              <input id="article-title" name="title" required maxlength="120" value="构建可靠的 AI Agent 后端">
+            </div>
+
+            <div class="field">
+              <label for="article-title-en" data-i18n="admin.label.titleEn">英文标题 / ENGLISH TITLE</label>
+              <input id="article-title-en" name="titleEn" maxlength="120" value="Building Reliable AI Agent Backends">
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="article-language" data-i18n="admin.label.language">语言 / LANGUAGE</label>
+                <select id="article-language" name="language">
+                  <option value="zh">中文</option>
+                  <option value="en">English</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="article-date" data-i18n="admin.label.date">日期 / DATE</label>
+                <input id="article-date" name="date" type="date" value="2026-06-08">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="article-slug">Slug</label>
+              <input id="article-slug" name="slug" value="building-reliable-ai-agent-backends">
+              <p class="field-help"><span data-i18n="admin.target">目标：</span> _posts/<span id="target-file">2026-06-08-building-reliable-ai-agent-backends.md</span></p>
+            </div>
+
+            <div class="field">
+              <label for="article-summary" data-i18n="admin.label.summary">摘要 / SUMMARY</label>
+              <textarea id="article-summary" name="summary" maxlength="240">从工具调用、状态管理到可观测性，梳理生产级 AI Agent 后端的核心架构。</textarea>
+            </div>
+
+            <div class="field">
+              <label for="article-tags" data-i18n="admin.label.tags">标签 / TAGS</label>
+              <input class="tag-input" id="article-tags" name="tags" value="Java, AI Agent, Spring AI, System Design">
+              <p class="field-help" data-i18n="admin.tagsHelp">使用英文逗号分隔，最多建议 6 个。</p>
+            </div>
+
+            <div class="field-row">
+              <label class="check-field">
+                <input id="article-featured" type="checkbox" checked>
+                <span class="field-label">FEATURED</span>
+              </label>
+              <label class="check-field">
+                <input id="article-published" type="checkbox" checked>
+                <span class="field-label">PUBLISHED</span>
+              </label>
+            </div>
+
+            <div class="field">
+              <span class="field-label" data-i18n="admin.cover">封面 / COVER IMAGE</span>
+              <label class="cover-drop" id="cover-drop" for="cover-input">
+                <span>
+                  <strong data-i18n="admin.coverUpload">UPLOAD COVER</strong>
+                  <span data-i18n="admin.coverHelp">点击或拖放图片 · 建议 1200 × 630</span>
+                </span>
+                <input id="cover-input" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
+              </label>
+              <div class="cover-preview" id="cover-preview">
+                <img id="cover-preview-image" alt="文章封面预览" data-i18n-alt="admin.coverPreview">
+              </div>
+              <p class="field-help">
+                <span data-i18n="admin.coverNote">图片不会上传到第三方。发布时请将它放到</span>
+                <span id="cover-target">assets/articles/building-reliable-ai-agent-backends/cover.webp</span>。
+              </p>
+            </div>
+          </form>
+          <div class="security-note">
+            <span aria-hidden="true">◇</span>
+            <span data-i18n="admin.security">本站不保存 GitHub 密码、PAT 或 OAuth Secret。发布按钮只会把 Markdown 交给 GitHub 官方编辑页面。</span>
+          </div>
+        </section>
+
+        <section class="admin-column editor-column">
+          <div class="admin-column-header">
+            <span data-i18n="admin.section.markdown">02 / MARKDOWN</span>
+            <span id="autosave-status" data-i18n="admin.autosaveReady">AUTOSAVE READY</span>
+          </div>
+          <div class="editor-wrap">
+            <div class="editor-toolbar" aria-label="Markdown 工具" data-i18n-aria="admin.toolbar">
+              <button class="editor-tool" type="button" data-wrap="**" title="Bold">B</button>
+              <button class="editor-tool" type="button" data-wrap="_" title="Italic">I</button>
+              <button class="editor-tool" type="button" data-prefix="## " title="Heading">H2</button>
+              <button class="editor-tool" type="button" data-prefix="- " title="List">• List</button>
+              <button class="editor-tool" type="button" data-wrap="`" title="Inline code">&lt;/&gt;</button>
+              <button class="editor-tool" type="button" data-block="```java&#10;&#10;```" title="Code block">Code</button>
+              <button class="editor-tool" type="button" data-block="![alt text](/assets/articles/image.webp)" title="Image">Image</button>
+            </div>
+            <textarea class="markdown-editor" id="markdown-editor" spellcheck="false">AI Agent 后端不只是把一个模型接到 API 上。真正进入生产环境后，系统必须同时处理工具编排、状态管理、失败恢复、成本控制和可观测性。
+
+## 架构目标
+
+一个可靠的 Agent 服务需要具备几个基本属性：
+
+- 模型、工具和业务逻辑彼此解耦
+- 每一次工具调用都可以被追踪和复现
+- 工作流失败时可以安全重试
+- 长任务具备明确的状态机和超时机制
+
+## 最小代码示例
+
+```java
+public interface AgentTool {
+    String name();
+    ToolResult execute(ToolContext context);
+}
+```
+
+## 可观测性
+
+至少记录 Prompt、模型版本、工具调用、耗时、Token 使用和重试原因。
+
+> Agent 的智能来自模型，但可靠性来自工程系统。</textarea>
+            <div class="editor-status">
+              <span><span data-i18n="admin.words">WORDS</span> <strong id="word-count">0</strong></span>
+              <span><span data-i18n="admin.readingTime">READING TIME</span> <strong id="reading-time">1</strong> MIN</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="admin-column preview-column">
+          <div class="admin-column-header">
+            <span data-i18n="admin.section.preview">03 / LIVE PREVIEW</span>
+            <a href="/" target="_blank" rel="noopener noreferrer" data-i18n="admin.openSite">OPEN SITE ↗</a>
+          </div>
+          <div class="preview-pane">
+            <img
+              class="preview-cover"
+              id="preview-cover"
+              src="/assets/articles/agent-backends/cover.svg"
+              alt="文章封面预览"
+              data-i18n-alt="admin.coverPreview"
+            >
+            <article class="preview-article">
+              <div class="article-meta">
+                <time id="preview-date">2026.06.08</time>
+                <span id="preview-reading">1 MIN READ</span>
+              </div>
+              <h1 id="preview-title">构建可靠的 AI Agent 后端</h1>
+              <p class="preview-summary" id="preview-summary">从工具调用、状态管理到可观测性，梳理生产级 AI Agent 后端的核心架构。</p>
+              <ul class="tag-list" id="preview-tags"></ul>
+              <div class="markdown-preview" id="markdown-preview"></div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <footer class="admin-actions">
+        <button class="admin-action" id="save-draft" type="button" data-i18n="admin.action.save">SAVE DRAFT</button>
+        <button class="admin-action" id="copy-markdown" type="button" data-i18n="admin.action.copy">COPY MARKDOWN</button>
+        <button class="admin-action" id="download-markdown" type="button" data-i18n="admin.action.download">DOWNLOAD .MD</button>
+        <button class="admin-action primary" id="publish-github" type="button" data-i18n="admin.action.publish">PUBLISH TO GITHUB ↗</button>
+      </footer>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/admin.js"></script>
+  </body>
+</html>

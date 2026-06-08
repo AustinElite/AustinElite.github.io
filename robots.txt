@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://austinelite.github.io/sitemap.xml
+
