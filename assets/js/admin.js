@@ -45,9 +45,12 @@ const adminMessages = {
     githubOpened: "已打开 GitHub 官方编辑器，请检查并提交文章。",
     invalidCover: "请选择 PNG、JPEG、WebP 或 SVG 图片。",
     coverLoaded: "封面已载入预览。发布前请将图片上传到提示路径。",
-    draftSaved: "DRAFT SAVED",
-    draftRestored: "DRAFT RESTORED",
-    editing: "EDITING..."
+    ready: "就绪",
+    autosaveReady: "自动保存就绪",
+    autosaved: "已自动保存",
+    draftSaved: "草稿已保存",
+    draftRestored: "草稿已恢复",
+    editing: "编辑中..."
   },
   en: {
     saved: "Draft saved in this browser.",
@@ -58,6 +61,9 @@ const adminMessages = {
     githubOpened: "GitHub's official editor is open. Review and commit the article there.",
     invalidCover: "Choose a PNG, JPEG, WebP, or SVG image.",
     coverLoaded: "Cover loaded for preview. Upload it to the suggested path before publishing.",
+    ready: "READY",
+    autosaveReady: "AUTOSAVE READY",
+    autosaved: "AUTOSAVED",
     draftSaved: "DRAFT SAVED",
     draftRestored: "DRAFT RESTORED",
     editing: "EDITING..."
@@ -67,6 +73,25 @@ const adminMessages = {
 function adminText(key) {
   const language = document.documentElement.dataset.language === "en" ? "en" : "zh";
   return adminMessages[language][key];
+}
+
+function renderAdminState() {
+  const draftStatus = draftState.dataset.state || "ready";
+  draftState.textContent =
+    draftStatus === "saved"
+      ? adminText("draftSaved")
+      : draftStatus === "restored"
+        ? adminText("draftRestored")
+        : adminText("ready");
+
+  const autosaveState = autosaveStatus.dataset.state || "ready";
+  if (autosaveState === "editing") {
+    autosaveStatus.textContent = adminText("editing");
+  } else if (autosaveState === "saved") {
+    autosaveStatus.textContent = `${adminText("autosaved")} ${autosaveStatus.dataset.time || ""}`.trim();
+  } else {
+    autosaveStatus.textContent = adminText("autosaveReady");
+  }
 }
 
 function escapeHtml(value) {
@@ -180,7 +205,10 @@ function updatePreview() {
       : fields.title.value;
   preview.summary.textContent = fields.summary.value;
   preview.date.textContent = formatDate(fields.date.value);
-  preview.reading.textContent = `${readTime} MIN READ`;
+  preview.reading.textContent =
+    document.documentElement.dataset.language === "zh"
+      ? `${readTime} 分钟阅读`
+      : `${readTime} MIN READ`;
   preview.tags.replaceChildren(
     ...tags.map((tag) => {
       const item = document.createElement("li");
@@ -239,8 +267,10 @@ function draftData() {
 
 function saveDraft(silent = false) {
   localStorage.setItem("austinelite-article-draft", JSON.stringify(draftData()));
-  autosaveStatus.textContent = `AUTOSAVED ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}`;
-  draftState.textContent = adminText("draftSaved");
+  autosaveStatus.dataset.state = "saved";
+  autosaveStatus.dataset.time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+  draftState.dataset.state = "saved";
+  renderAdminState();
   if (!silent) showToast(adminText("saved"));
 }
 
@@ -256,7 +286,8 @@ function loadDraft() {
       else field.value = value;
     });
     slugWasEdited = true;
-    draftState.textContent = adminText("draftRestored");
+    draftState.dataset.state = "restored";
+    renderAdminState();
   } catch {
     localStorage.removeItem("austinelite-article-draft");
   }
@@ -264,7 +295,8 @@ function loadDraft() {
 
 function scheduleAutosave() {
   clearTimeout(saveTimer);
-  autosaveStatus.textContent = adminText("editing");
+  autosaveStatus.dataset.state = "editing";
+  renderAdminState();
   saveTimer = setTimeout(() => saveDraft(true), 800);
 }
 
@@ -393,6 +425,11 @@ document.querySelector("#save-draft").addEventListener("click", () => saveDraft(
 document.querySelector("#copy-markdown").addEventListener("click", copyMarkdown);
 document.querySelector("#download-markdown").addEventListener("click", downloadMarkdown);
 document.querySelector("#publish-github").addEventListener("click", publishToGitHub);
+window.addEventListener("austinelite:language", () => {
+  updatePreview();
+  renderAdminState();
+});
 
 loadDraft();
 updatePreview();
+renderAdminState();
