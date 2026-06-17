@@ -8,7 +8,7 @@
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/admin.css">
-    <title>AustinElite Writing Console</title>
+    <title>AustinElite 写作控制台</title>
     <script>
       (() => {
         const saved = localStorage.getItem("austinelite-theme");
@@ -24,9 +24,18 @@
           <span data-i18n="admin.title">文章写作控制台</span>
         </a>
         <div class="connection-bar" aria-label="发布状态" data-i18n-aria="admin.status.aria">
-          <span class="connection-chip"><i class="status-dot" aria-hidden="true"></i> SAFE LOCAL MODE</span>
-          <span class="connection-chip">BRANCH <strong style="color:var(--cyan)">main</strong></span>
-          <span class="connection-chip">TARGET <strong>_posts/...</strong></span>
+          <span class="connection-chip">
+            <i class="status-dot" aria-hidden="true"></i>
+            <span data-i18n="admin.connection.safe">安全本地模式</span>
+          </span>
+          <span class="connection-chip">
+            <span data-i18n="admin.connection.branch">分支</span>
+            <strong style="color:var(--cyan)">main</strong>
+          </span>
+          <span class="connection-chip">
+            <span data-i18n="admin.connection.target">目标</span>
+            <strong>_posts/...</strong>
+          </span>
         </div>
         <div class="admin-controls">
           <button class="control-button" id="language-toggle" type="button" aria-label="Switch to English">
@@ -41,30 +50,30 @@
       <div class="admin-grid">
         <section class="admin-column">
           <div class="admin-column-header">
-            <span data-i18n="admin.section.new">01 / NEW ARTICLE</span>
-            <span id="draft-state" data-i18n="admin.section.ready">READY</span>
+            <span data-i18n="admin.section.new">01 / 新文章</span>
+            <span id="draft-state" data-state="ready" data-i18n="admin.section.ready">就绪</span>
           </div>
           <form class="admin-form" id="article-form">
             <div class="field">
-              <label for="article-title" data-i18n="admin.label.title">标题 / TITLE</label>
+              <label for="article-title" data-i18n="admin.label.title">标题</label>
               <input id="article-title" name="title" required maxlength="120" value="构建可靠的 AI Agent 后端">
             </div>
 
             <div class="field">
-              <label for="article-title-en" data-i18n="admin.label.titleEn">英文标题 / ENGLISH TITLE</label>
+              <label for="article-title-en" data-i18n="admin.label.titleEn">英文标题</label>
               <input id="article-title-en" name="titleEn" maxlength="120" value="Building Reliable AI Agent Backends">
             </div>
 
             <div class="field-row">
               <div class="field">
-                <label for="article-language" data-i18n="admin.label.language">语言 / LANGUAGE</label>
+                <label for="article-language" data-i18n="admin.label.language">语言</label>
                 <select id="article-language" name="language">
-                  <option value="zh">中文</option>
-                  <option value="en">English</option>
+                  <option value="zh" data-i18n="admin.language.zh">中文</option>
+                  <option value="en" data-i18n="admin.language.en">英文</option>
                 </select>
               </div>
               <div class="field">
-                <label for="article-date" data-i18n="admin.label.date">日期 / DATE</label>
+                <label for="article-date" data-i18n="admin.label.date">日期</label>
                 <input id="article-date" name="date" type="date" value="2026-06-08">
               </div>
             </div>
@@ -76,12 +85,12 @@
             </div>
 
             <div class="field">
-              <label for="article-summary" data-i18n="admin.label.summary">摘要 / SUMMARY</label>
+              <label for="article-summary" data-i18n="admin.label.summary">摘要</label>
               <textarea id="article-summary" name="summary" maxlength="240">从工具调用、状态管理到可观测性，梳理生产级 AI Agent 后端的核心架构。</textarea>
             </div>
 
             <div class="field">
-              <label for="article-tags" data-i18n="admin.label.tags">标签 / TAGS</label>
+              <label for="article-tags" data-i18n="admin.label.tags">标签</label>
               <input class="tag-input" id="article-tags" name="tags" value="Java, AI Agent, Spring AI, System Design">
               <p class="field-help" data-i18n="admin.tagsHelp">使用英文逗号分隔，最多建议 6 个。</p>
             </div>
@@ -89,19 +98,19 @@
             <div class="field-row">
               <label class="check-field">
                 <input id="article-featured" type="checkbox" checked>
-                <span class="field-label">FEATURED</span>
+                <span class="field-label" data-i18n="admin.featured">精选</span>
               </label>
               <label class="check-field">
                 <input id="article-published" type="checkbox" checked>
-                <span class="field-label">PUBLISHED</span>
+                <span class="field-label" data-i18n="admin.published">发布</span>
               </label>
             </div>
 
             <div class="field">
-              <span class="field-label" data-i18n="admin.cover">封面 / COVER IMAGE</span>
+              <span class="field-label" data-i18n="admin.cover">封面</span>
               <label class="cover-drop" id="cover-drop" for="cover-input">
                 <span>
-                  <strong data-i18n="admin.coverUpload">UPLOAD COVER</strong>
+                  <strong data-i18n="admin.coverUpload">上传封面</strong>
                   <span data-i18n="admin.coverHelp">点击或拖放图片 · 建议 1200 × 630</span>
                 </span>
                 <input id="cover-input" type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden>
@@ -123,18 +132,18 @@
 
         <section class="admin-column editor-column">
           <div class="admin-column-header">
-            <span data-i18n="admin.section.markdown">02 / MARKDOWN</span>
-            <span id="autosave-status" data-i18n="admin.autosaveReady">AUTOSAVE READY</span>
+            <span data-i18n="admin.section.markdown">02 / Markdown</span>
+            <span id="autosave-status" data-state="ready" data-i18n="admin.autosaveReady">自动保存就绪</span>
           </div>
           <div class="editor-wrap">
             <div class="editor-toolbar" aria-label="Markdown 工具" data-i18n-aria="admin.toolbar">
-              <button class="editor-tool" type="button" data-wrap="**" title="Bold">B</button>
-              <button class="editor-tool" type="button" data-wrap="_" title="Italic">I</button>
-              <button class="editor-tool" type="button" data-prefix="## " title="Heading">H2</button>
-              <button class="editor-tool" type="button" data-prefix="- " title="List">• List</button>
-              <button class="editor-tool" type="button" data-wrap="`" title="Inline code">&lt;/&gt;</button>
-              <button class="editor-tool" type="button" data-block="```java&#10;&#10;```" title="Code block">Code</button>
-              <button class="editor-tool" type="button" data-block="![alt text](/assets/articles/image.webp)" title="Image">Image</button>
+              <button class="editor-tool" type="button" data-wrap="**" title="粗体" data-i18n-title="admin.tool.bold">B</button>
+              <button class="editor-tool" type="button" data-wrap="_" title="斜体" data-i18n-title="admin.tool.italic">I</button>
+              <button class="editor-tool" type="button" data-prefix="## " title="标题" data-i18n-title="admin.tool.heading">H2</button>
+              <button class="editor-tool" type="button" data-prefix="- " title="列表" data-i18n-title="admin.tool.list">• <span data-i18n="admin.tool.list">列表</span></button>
+              <button class="editor-tool" type="button" data-wrap="`" title="行内代码" data-i18n-title="admin.tool.inlineCode">&lt;/&gt;</button>
+              <button class="editor-tool" type="button" data-block="```java&#10;&#10;```" title="代码块" data-i18n-title="admin.tool.codeBlock" data-i18n="admin.tool.codeBlock">代码块</button>
+              <button class="editor-tool" type="button" data-block="![alt text](/assets/articles/image.webp)" title="图片" data-i18n-title="admin.tool.image" data-i18n="admin.tool.image">图片</button>
             </div>
             <textarea class="markdown-editor" id="markdown-editor" spellcheck="false">AI Agent 后端不只是把一个模型接到 API 上。真正进入生产环境后，系统必须同时处理工具编排、状态管理、失败恢复、成本控制和可观测性。
 
@@ -162,16 +171,16 @@ public interface AgentTool {
 
 > Agent 的智能来自模型，但可靠性来自工程系统。</textarea>
             <div class="editor-status">
-              <span><span data-i18n="admin.words">WORDS</span> <strong id="word-count">0</strong></span>
-              <span><span data-i18n="admin.readingTime">READING TIME</span> <strong id="reading-time">1</strong> MIN</span>
+              <span><span data-i18n="admin.words">字数</span> <strong id="word-count">0</strong></span>
+              <span><span data-i18n="admin.readingTime">阅读时间</span> <strong id="reading-time">1</strong> <span data-i18n="admin.minute">分钟</span></span>
             </div>
           </div>
         </section>
 
         <section class="admin-column preview-column">
           <div class="admin-column-header">
-            <span data-i18n="admin.section.preview">03 / LIVE PREVIEW</span>
-            <a href="/" target="_blank" rel="noopener noreferrer" data-i18n="admin.openSite">OPEN SITE ↗</a>
+            <span data-i18n="admin.section.preview">03 / 实时预览</span>
+            <a href="/" target="_blank" rel="noopener noreferrer" data-i18n="admin.openSite">打开网站 ↗</a>
           </div>
           <div class="preview-pane">
             <img
@@ -184,7 +193,7 @@ public interface AgentTool {
             <article class="preview-article">
               <div class="article-meta">
                 <time id="preview-date">2026.06.08</time>
-                <span id="preview-reading">1 MIN READ</span>
+                <span id="preview-reading">1 分钟阅读</span>
               </div>
               <h1 id="preview-title">构建可靠的 AI Agent 后端</h1>
               <p class="preview-summary" id="preview-summary">从工具调用、状态管理到可观测性，梳理生产级 AI Agent 后端的核心架构。</p>
@@ -196,10 +205,10 @@ public interface AgentTool {
       </div>
 
       <footer class="admin-actions">
-        <button class="admin-action" id="save-draft" type="button" data-i18n="admin.action.save">SAVE DRAFT</button>
-        <button class="admin-action" id="copy-markdown" type="button" data-i18n="admin.action.copy">COPY MARKDOWN</button>
-        <button class="admin-action" id="download-markdown" type="button" data-i18n="admin.action.download">DOWNLOAD .MD</button>
-        <button class="admin-action primary" id="publish-github" type="button" data-i18n="admin.action.publish">PUBLISH TO GITHUB ↗</button>
+        <button class="admin-action" id="save-draft" type="button" data-i18n="admin.action.save">保存草稿</button>
+        <button class="admin-action" id="copy-markdown" type="button" data-i18n="admin.action.copy">复制 Markdown</button>
+        <button class="admin-action" id="download-markdown" type="button" data-i18n="admin.action.download">下载 .md</button>
+        <button class="admin-action primary" id="publish-github" type="button" data-i18n="admin.action.publish">发布到 GitHub ↗</button>
       </footer>
     </main>
 
