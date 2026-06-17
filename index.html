@@ -103,16 +103,16 @@ layout: null
               </div>
             </div>
 
-            <aside class="status-panel" aria-label="系统状态">
+            <aside class="status-panel" aria-label="系统状态" data-i18n-aria="status.aria">
               <div class="status-heading">
                 <span class="status-dot" aria-hidden="true"></span>
                 <span data-i18n="status.operational">SYSTEM STATUS · OPERATIONAL</span>
               </div>
               <dl class="status-grid">
-                <dt data-i18n="status.architecture">架构</dt><dd>ONLINE</dd>
+                <dt data-i18n="status.architecture">架构</dt><dd data-i18n="status.online">在线</dd>
                 <dt data-i18n="status.services">服务</dt><dd>42</dd>
-                <dt>AI AGENTS</dt><dd>ACTIVE</dd>
-                <dt>UPTIME</dt><dd>99.99%</dd>
+                <dt data-i18n="status.agents">AI Agent</dt><dd data-i18n="status.active">活跃</dd>
+                <dt data-i18n="status.uptime">运行时间</dt><dd>99.99%</dd>
               </dl>
               <div class="mini-chart" aria-hidden="true">
                 <i style="--h:32;--i:1"></i><i style="--h:48;--i:2"></i>
@@ -128,19 +128,19 @@ layout: null
           </div>
 
           <div class="signal-feed" aria-hidden="true">
-            <span class="feed-label">// SIGNAL FEED</span>
+            <span class="feed-label" data-i18n="signal.label">// 实时信号</span>
             <div class="feed-window">
               <div class="feed-track">
-                <span>JAVA SERVICES HEALTHY</span>
-                <span>AI AGENTS SYNCHRONIZED</span>
-                <span>KAFKA STREAMS ACTIVE</span>
-                <span>RAG INDEX READY</span>
-                <span>REDIS CACHE WARM</span>
-                <span>JAVA SERVICES HEALTHY</span>
-                <span>AI AGENTS SYNCHRONIZED</span>
-                <span>KAFKA STREAMS ACTIVE</span>
-                <span>RAG INDEX READY</span>
-                <span>REDIS CACHE WARM</span>
+                <span data-i18n="signal.java">Java 服务运行正常</span>
+                <span data-i18n="signal.agents">AI Agent 已同步</span>
+                <span data-i18n="signal.kafka">Kafka 数据流活跃</span>
+                <span data-i18n="signal.rag">RAG 索引就绪</span>
+                <span data-i18n="signal.redis">Redis 缓存已预热</span>
+                <span data-i18n="signal.java">Java 服务运行正常</span>
+                <span data-i18n="signal.agents">AI Agent 已同步</span>
+                <span data-i18n="signal.kafka">Kafka 数据流活跃</span>
+                <span data-i18n="signal.rag">RAG 索引就绪</span>
+                <span data-i18n="signal.redis">Redis 缓存已预热</span>
               </div>
             </div>
           </div>
@@ -280,12 +280,12 @@ layout: null
           <div class="section-grid">
             <div class="section-index">
               <span class="section-number">04</span>
-              <span class="section-name">Intelligence Log</span>
+              <span class="section-name" data-i18n="articles.logLabel">技术日志</span>
             </div>
             <div class="section-content">
               <div class="articles-heading-row">
                 <div>
-                  <p class="section-kicker">LATEST ARTICLES</p>
+                  <p class="section-kicker" data-i18n="articles.kicker">最新文章</p>
                   <h2 class="display-heading" id="articles-heading" data-i18n="articles.heading">记录后端系统与智能工程。</h2>
                 </div>
                 <a class="write-button" href="/admin/">
@@ -305,7 +305,7 @@ layout: null
                     <div class="article-meta">
                       <span class="featured-label" data-i18n="articles.featured">精选文章</span>
                       <time datetime="{{ featured_post.date | date_to_xmlschema }}">{{ featured_post.date | date: "%Y.%m.%d" }}</time>
-                      <span>{{ featured_post.read_time | default: 6 }} MIN READ</span>
+                      <span>{{ featured_post.read_time | default: 6 }} <span data-i18n="articles.readTime">分钟阅读</span></span>
                     </div>
                     <h3>
                       <a
@@ -342,7 +342,7 @@ layout: null
                         >{{ post.title }}</h3>
                         <p>
                           {% for tag in post.tags limit: 2 %}{{ tag | upcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}
-                          · {{ post.read_time | default: 6 }} MIN READ
+                          · {{ post.read_time | default: 6 }} <span data-i18n="articles.readTime">分钟阅读</span>
                         </p>
                       </div>
                       <span class="article-arrow" aria-hidden="true">→</span>
@@ -364,7 +364,7 @@ layout: null
               <span class="section-name" data-i18n="experiments.label">实验项目</span>
             </div>
             <div class="section-content">
-              <p class="section-kicker">SELECTED EXPERIMENTS</p>
+              <p class="section-kicker" data-i18n="experiments.kicker">精选实验</p>
               <h2 class="display-heading" id="experiments-heading" data-i18n="experiments.heading">探索表达、内容与 Agent 的边界。</h2>
               <div class="experiment-list reveal">
                 <a class="experiment" href="https://github.com/AustinElite/LiBai-skill" target="_blank" rel="noopener noreferrer">
@@ -407,7 +407,7 @@ layout: null
 
       <footer class="site-footer">
         <strong>AUSTINELITE</strong>
-        <span class="footer-center">JAVA BACKEND ENGINEER · AI AGENT DEVELOPER</span>
+        <span class="footer-center" data-i18n="footer.role">Java 后端工程师 · AI Agent 开发者</span>
         <div class="footer-links">
           <a href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">GitHub</a>
           <span>© <span data-current-year>2026</span></span>
