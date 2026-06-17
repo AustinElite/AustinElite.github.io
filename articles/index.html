@@ -103,7 +103,7 @@ layout: null
                 <div class="article-card-copy">
                   <div class="article-meta">
                     <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
-                    <span>{{ post.read_time | default: 6 }} MIN READ</span>
+                    <span>{{ post.read_time | default: 6 }} <span data-i18n="articles.readTime">分钟阅读</span></span>
                   </div>
                   <h2><a href="{{ post.url }}" data-card-title>{{ post.title }}</a></h2>
                   <p data-card-description>{{ post.description }}</p>
@@ -125,7 +125,7 @@ layout: null
 
       <footer class="site-footer">
         <strong>AUSTINELITE</strong>
-        <span class="footer-center">INTELLIGENCE LOG</span>
+        <span class="footer-center" data-i18n="articles.logLabel">技术日志</span>
         <div class="footer-links">
           <a href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">GitHub</a>
           <span>© <span data-current-year>2026</span></span>
