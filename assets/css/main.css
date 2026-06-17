@@ -52,6 +52,15 @@
   --green: #34e47b;
   --orange: #ff8f5a;
   --header: rgba(5, 7, 11, 0.78);
+  --hero-orb:
+    radial-gradient(circle at 38% 28%, rgba(79, 124, 255, 0.2), transparent 23%),
+    radial-gradient(circle at 50% 50%, #101d3a 0, #07101f 42%, #02040a 71%);
+  --hero-orb-shadow:
+    0 -8px 48px rgba(85, 221, 224, 0.22),
+    inset 0 0 80px rgba(37, 99, 235, 0.22);
+  --code-bg: #070b12;
+  --code-text: #dce7ff;
+  --visual-bg: #05080e;
   --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
   --max-width: 1440px;
   --section-pad: clamp(4.5rem, 8vw, 9rem);
@@ -75,6 +84,15 @@
   --green: #07883f;
   --orange: #c94b13;
   --header: rgba(238, 241, 245, 0.84);
+  --hero-orb:
+    radial-gradient(circle at 36% 28%, rgba(255, 255, 255, 0.96), transparent 22%),
+    radial-gradient(circle at 50% 50%, #dbeafe 0, #bfd7ff 43%, #8ab4f8 72%, #5b8ee8 100%);
+  --hero-orb-shadow:
+    0 -8px 48px rgba(37, 99, 235, 0.18),
+    inset 0 0 80px rgba(255, 255, 255, 0.5);
+  --code-bg: #e7ecf4;
+  --code-text: #172033;
+  --visual-bg: #dfe8f5;
   --shadow: 0 24px 70px rgba(41, 61, 89, 0.14);
 }
 
@@ -128,6 +146,14 @@ svg,
 canvas {
   display: block;
   max-width: 100%;
+}
+
+img[src*="/assets/articles/"][src$=".svg"] {
+  transition: filter 220ms ease;
+}
+
+:root[data-theme="light"] img[src*="/assets/articles/"][src$=".svg"] {
+  filter: invert(1) hue-rotate(180deg);
 }
 
 ::selection {
@@ -398,12 +424,8 @@ canvas {
   content: "";
   border: 1px solid rgba(85, 221, 224, 0.42);
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 38% 28%, rgba(79, 124, 255, 0.2), transparent 23%),
-    radial-gradient(circle at 50% 50%, #101d3a 0, #07101f 42%, #02040a 71%);
-  box-shadow:
-    0 -8px 48px rgba(85, 221, 224, 0.22),
-    inset 0 0 80px rgba(37, 99, 235, 0.22);
+  background: var(--hero-orb);
+  box-shadow: var(--hero-orb-shadow);
 }
 
 .star-canvas {
@@ -474,7 +496,8 @@ canvas {
 
 .hero-copy {
   align-self: center;
-  max-width: 980px;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .eyebrow,
@@ -489,15 +512,16 @@ canvas {
 }
 
 .hero-title {
-  max-width: 1040px;
+  max-width: 100%;
   margin: 0.75rem 0 1.25rem;
   color: var(--text);
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 8.6vw, 9.2rem);
+  font-size: clamp(3.5rem, 7.15vw, 8rem);
   font-weight: 800;
   line-height: 0.92;
   letter-spacing: -0.07em;
   text-transform: uppercase;
+  white-space: nowrap;
   text-shadow: 0 0 36px rgba(79, 124, 255, 0.12);
 }
 
@@ -570,6 +594,8 @@ canvas {
 }
 
 .status-panel {
+  position: relative;
+  z-index: 3;
   align-self: center;
   padding: 1rem;
   border: 1px solid var(--line-strong);
@@ -687,6 +713,10 @@ canvas {
   margin-right: 0.65rem;
   color: var(--blue-bright);
   content: "INFO";
+}
+
+:root[data-language="zh"] .feed-track span::before {
+  content: "状态";
 }
 
 .content-section {
@@ -941,7 +971,7 @@ canvas {
   background:
     linear-gradient(rgba(85, 221, 224, 0.04) 1px, transparent 1px),
     linear-gradient(90deg, rgba(85, 221, 224, 0.04) 1px, transparent 1px),
-    #05080e;
+    var(--visual-bg);
   background-size: 28px 28px;
 }
 
@@ -1542,9 +1572,9 @@ canvas {
   max-width: 100%;
   padding: 1.4rem;
   overflow: auto;
-  color: #dce7ff;
+  color: var(--code-text);
   border: 1px solid var(--line);
-  background: #070b12;
+  background: var(--code-bg);
   font-family: var(--font-mono);
   font-size: 0.85rem;
   line-height: 1.65;
@@ -1651,6 +1681,10 @@ canvas {
     grid-template-columns: minmax(0, 1fr) 260px;
   }
 
+  .hero-title {
+    font-size: clamp(3.5rem, 6.1vw, 4.8rem);
+  }
+
   .capability-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1699,6 +1733,7 @@ canvas {
 
   .hero-title {
     font-size: clamp(2.65rem, 12vw, 6rem);
+    white-space: normal;
   }
 
   .status-panel {
