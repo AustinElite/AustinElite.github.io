@@ -253,10 +253,10 @@
   min-height: 640px;
   padding: 1.2rem;
   resize: none;
-  color: #dce7ff;
+  color: var(--code-text);
   border: 0;
   outline: 0;
-  background: #070b12;
+  background: var(--code-bg);
   font-family: var(--font-mono);
   font-size: 0.82rem;
   line-height: 1.75;
@@ -327,9 +327,9 @@
 .markdown-preview pre {
   padding: 1rem;
   overflow: auto;
-  color: #dce7ff;
+  color: var(--code-text);
   border: 1px solid var(--line);
-  background: #070b12;
+  background: var(--code-bg);
   font-family: var(--font-mono);
   font-size: 0.76rem;
 }
@@ -471,4 +471,3 @@
     font-size: 0.8rem;
   }
 }
-
