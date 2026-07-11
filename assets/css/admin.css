@@ -1,10 +1,11 @@
-.admin-shell {
+﻿.admin-shell {
   width: min(calc(100% - 1rem), 1680px);
   min-height: calc(100svh - 1rem);
   margin: 0.5rem auto;
   border: 1px solid var(--line);
   background: var(--bg);
-  box-shadow: var(--shadow);
+  border-radius: 8px;
+  box-shadow: none;
 }
 
 .admin-header {
@@ -27,14 +28,14 @@
 
 .admin-brand strong {
   font-family: var(--font-display);
-  letter-spacing: -0.05em;
+  letter-spacing: 0;
 }
 
 .admin-brand span {
-  color: var(--blue-bright);
+  color: var(--muted);
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  letter-spacing: 0.08em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -51,6 +52,7 @@
   min-height: 36px;
   padding: 0.45rem 0.75rem;
   border: 1px solid var(--line);
+  border-radius: 6px;
   color: var(--text-soft);
   font-family: var(--font-mono);
   font-size: 0.64rem;
@@ -84,11 +86,11 @@
   min-height: 54px;
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--line);
-  color: var(--blue-bright);
+  color: var(--text-soft);
   font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 0.07em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -115,7 +117,7 @@
   font-family: var(--font-mono);
   font-size: 0.63rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
@@ -128,6 +130,7 @@
   padding: 0.65rem 0.75rem;
   color: var(--text);
   border: 1px solid var(--line);
+  border-radius: 6px;
   outline: 0;
   background: var(--surface);
   font-size: 0.82rem;
@@ -142,8 +145,8 @@
 .field textarea:focus,
 .field select:focus,
 .tag-input:focus {
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(85, 221, 224, 0.08);
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px rgba(175, 80, 255, 0.12);
 }
 
 .field-help {
@@ -160,6 +163,7 @@
   min-height: 42px;
   padding: 0.65rem 0.75rem;
   border: 1px solid var(--line);
+  border-radius: 6px;
   background: var(--surface);
 }
 
@@ -175,21 +179,19 @@
   padding: 1rem;
   text-align: center;
   border: 1px dashed var(--line-strong);
-  background:
-    linear-gradient(rgba(85, 221, 224, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(85, 221, 224, 0.025) 1px, transparent 1px);
-  background-size: 24px 24px;
+  border-radius: 8px;
+  background: var(--surface);
   cursor: pointer;
 }
 
 .cover-drop.is-dragging {
-  border-color: var(--cyan);
-  background-color: rgba(85, 221, 224, 0.08);
+  border-color: var(--violet);
+  background-color: rgba(175, 80, 255, 0.08);
 }
 
 .cover-drop strong {
   display: block;
-  color: var(--blue-bright);
+  color: var(--text);
   font-family: var(--font-mono);
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -237,6 +239,7 @@
   padding: 0.35rem 0.5rem;
   color: var(--text-soft);
   border: 1px solid transparent;
+  border-radius: 4px;
   background: transparent;
   font-family: var(--font-mono);
   font-size: 0.66rem;
@@ -244,7 +247,7 @@
 }
 
 .editor-tool:hover {
-  color: var(--cyan);
+  color: var(--text);
   border-color: var(--line);
 }
 
@@ -299,7 +302,7 @@
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 3.2vw, 3.4rem);
   line-height: 1.1;
-  letter-spacing: -0.055em;
+  letter-spacing: 0;
 }
 
 .preview-summary {
@@ -329,6 +332,7 @@
   overflow: auto;
   color: var(--code-text);
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: var(--code-bg);
   font-family: var(--font-mono);
   font-size: 0.76rem;
@@ -356,25 +360,26 @@
   padding: 0.65rem 0.8rem;
   color: var(--text);
   border: 1px solid var(--line);
+  border-radius: 6px;
   background: transparent;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   text-transform: uppercase;
   cursor: pointer;
 }
 
 .admin-action:hover {
-  border-color: var(--cyan);
-  background: rgba(85, 221, 224, 0.06);
+  border-color: var(--text);
+  background: rgba(247, 249, 250, 0.06);
 }
 
 .admin-action.primary {
   color: #fff;
   border-color: var(--blue-bright);
   background: var(--blue);
-  box-shadow: 0 8px 28px rgba(37, 99, 235, 0.24);
+  box-shadow: none;
 }
 
 .security-note {
@@ -396,9 +401,10 @@
   max-width: 340px;
   padding: 0.85rem 1rem;
   color: #fff;
-  border: 1px solid var(--cyan);
-  background: rgba(5, 7, 11, 0.94);
-  box-shadow: 0 14px 50px rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--violet);
+  border-radius: 6px;
+  background: rgba(9, 9, 9, 0.96);
+  box-shadow: none;
   opacity: 0;
   pointer-events: none;
   transform: translateY(12px);

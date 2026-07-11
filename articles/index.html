@@ -1,4 +1,4 @@
----
+﻿---
 layout: null
 ---
 <!doctype html>
@@ -6,11 +6,12 @@ layout: null
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#05070b">
+    <meta name="theme-color" content="#090909">
     <meta name="description" content="AustinElite 的技术文章，涵盖 Java、系统设计、AI Agent、LLM 与生产工程。">
     <link rel="canonical" href="https://austinelite.github.io/articles/">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css?v=20260711-github-repos">
+    <link rel="stylesheet" href="/assets/css/midnight.css?v=20260711-midnight">
     <title>Articles — AustinElite</title>
     <script>
       (() => {
@@ -39,9 +40,6 @@ layout: null
           <button class="control-button" id="theme-toggle" type="button" aria-label="切换到亮色主题" aria-pressed="true">
             <span class="theme-icon" aria-hidden="true">☀</span>
           </button>
-          <a class="write-button" href="/admin/">
-            <span aria-hidden="true">✎</span><span data-i18n="write.label">写作 / 上传</span>
-          </a>
           <button class="menu-button" id="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false">
             <span class="menu-icon" aria-hidden="true"></span>
           </button>
@@ -53,7 +51,6 @@ layout: null
         <a href="/#work" data-i18n="nav.work">项目</a>
         <a href="/articles/" data-i18n="nav.articles">文章</a>
         <a href="/#contact" data-i18n="nav.contact">联系</a>
-        <a href="/admin/" data-i18n="write.label">写作 / 上传</a>
       </nav>
 
       <main id="main-content">
@@ -124,16 +121,17 @@ layout: null
       </main>
 
       <footer class="site-footer">
-        <strong>AUSTINELITE</strong>
-        <span class="footer-center" data-i18n="articles.logLabel">技术日志</span>
+        <div class="footer-signature"><span aria-hidden="true">+</span><strong>AUSTINELITE</strong></div>
+        <span class="footer-center">CHINA / UTC+08:00</span>
         <div class="footer-links">
           <a href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="/admin/" data-i18n="footer.console">Console</a>
           <span>© <span data-current-year>2026</span></span>
         </div>
       </footer>
     </div>
 
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main.js?v=20260711-github-repos"></script>
     <script src="/assets/js/articles.js"></script>
   </body>
 </html>

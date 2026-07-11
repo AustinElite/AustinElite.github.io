@@ -1,4 +1,4 @@
----
+﻿---
 layout: null
 ---
 <!doctype html>
@@ -6,7 +6,7 @@ layout: null
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#05070b">
+    <meta name="theme-color" content="#090909">
     <meta name="description" content="AustinElite 的个人主页，展示 Java 后端、分布式系统、AI Agent、LLM 项目与技术文章。">
     <meta name="author" content="AustinElite">
     <meta property="og:type" content="website">
@@ -17,7 +17,8 @@ layout: null
     <meta name="twitter:card" content="summary_large_image">
     <link rel="canonical" href="https://austinelite.github.io/">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css?v=20260711-github-repos">
+    <link rel="stylesheet" href="/assets/css/midnight.css?v=20260711-midnight">
     <title>AustinElite — Java Backend Engineer & AI Agent Developer</title>
     <script>
       (() => {
@@ -26,7 +27,7 @@ layout: null
       })();
     </script>
   </head>
-  <body>
+  <body data-page="home">
     <a class="skip-link" href="#main-content">跳转到主要内容</a>
 
     <div class="site-shell">
@@ -49,15 +50,6 @@ layout: null
           <button class="control-button" id="theme-toggle" type="button" aria-label="切换到亮色主题" aria-pressed="true">
             <span class="theme-icon" aria-hidden="true">☀</span>
           </button>
-          <a
-            class="write-button"
-            href="/admin/"
-            data-i18n-aria="write.aria"
-            aria-label="进入文章写作后台"
-          >
-            <span aria-hidden="true">✎</span>
-            <span data-i18n="write.label">写作 / 上传</span>
-          </a>
           <button class="menu-button" id="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false">
             <span class="menu-icon" aria-hidden="true"></span>
           </button>
@@ -70,79 +62,60 @@ layout: null
         <a href="#work" data-i18n="nav.work">项目</a>
         <a href="#articles" data-i18n="nav.articles">文章</a>
         <a href="#contact" data-i18n="nav.contact">联系</a>
-        <a href="/admin/" data-i18n="write.label">写作 / 上传</a>
       </nav>
 
       <main id="main-content">
         <section class="hero" id="home" aria-labelledby="hero-title">
-          <canvas class="star-canvas" id="star-canvas" aria-hidden="true"></canvas>
-          <div class="pointer-glow" id="pointer-glow" aria-hidden="true"></div>
-          <i class="corner corner-tl" aria-hidden="true"></i>
-          <i class="corner corner-tr" aria-hidden="true"></i>
-          <i class="corner corner-bl" aria-hidden="true"></i>
-          <i class="corner corner-br" aria-hidden="true"></i>
-
+          <img
+            class="hero-image"
+            src="/assets/images/austinelite-hero-night.webp"
+            alt=""
+            width="1736"
+            height="910"
+            fetchpriority="high"
+            aria-hidden="true"
+          >
           <div class="hero-inner">
             <div class="hero-copy">
-              <p class="eyebrow" data-i18n="hero.eyebrow">// SYSTEM ONLINE · BUILDING THE INTELLIGENT BACKEND</p>
+              <p class="eyebrow" data-i18n="hero.eyebrow">// AUSTINELITE · ENGINEERING INTELLIGENCE</p>
+              <p class="hero-signature" data-i18n="hero.signature">让智能，真正运行。</p>
               <h1 class="hero-title" id="hero-title">AUSTINELITE</h1>
               <p class="hero-roles">
                 <span data-i18n="hero.backend">Java 后端工程师</span>
                 <span data-i18n="hero.agent">AI Agent 开发者</span>
               </p>
-              <p class="hero-tagline" data-i18n="hero.tagline">构建可扩展的系统，创造真正有价值的智能。</p>
+              <p class="hero-tagline" data-i18n="hero.tagline">构建可靠的后端系统，也构建能进入真实业务的 AI。</p>
               <div class="hero-actions">
-                <a class="button button-primary" href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">
+                <a class="button button-primary" href="#work">
+                  <span data-i18n="hero.viewWork">浏览项目</span>
+                  <span aria-hidden="true">↘</span>
+                </a>
+                <a class="button button-secondary" href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">
                   <span>GitHub</span>
                   <span aria-hidden="true">↗</span>
                 </a>
-                <a class="button button-secondary" href="#contact">
-                  <span data-i18n="nav.contact">联系</span>
-                  <span aria-hidden="true">↗</span>
-                </a>
               </div>
             </div>
 
-            <aside class="status-panel" aria-label="系统状态" data-i18n-aria="status.aria">
-              <div class="status-heading">
+            <aside class="hero-note" aria-label="当前工作方向" data-i18n-aria="hero.noteAria">
+              <div class="hero-note-label">
                 <span class="status-dot" aria-hidden="true"></span>
-                <span data-i18n="status.operational">SYSTEM STATUS · OPERATIONAL</span>
+                <span data-i18n="hero.nowLabel">NOW / BUILD LOG 2026</span>
               </div>
-              <dl class="status-grid">
-                <dt data-i18n="status.architecture">架构</dt><dd data-i18n="status.online">在线</dd>
-                <dt data-i18n="status.services">服务</dt><dd>42</dd>
-                <dt data-i18n="status.agents">AI Agent</dt><dd data-i18n="status.active">活跃</dd>
-                <dt data-i18n="status.uptime">运行时间</dt><dd>99.99%</dd>
+              <p data-i18n="hero.nowBody">正在把后端工程、检索与 Agent 工作流，组合成可观察、可恢复、可交付的智能产品。</p>
+              <dl class="hero-note-grid">
+                <div><dt data-i18n="facts.focus">方向</dt><dd>Backend · AI Agents</dd></div>
+                <div><dt data-i18n="facts.stack">技术栈</dt><dd>Java · Spring · LLM</dd></div>
+                <div><dt data-i18n="facts.location">位置</dt><dd>China / Remote</dd></div>
               </dl>
-              <div class="mini-chart" aria-hidden="true">
-                <i style="--h:32;--i:1"></i><i style="--h:48;--i:2"></i>
-                <i style="--h:26;--i:3"></i><i style="--h:72;--i:4"></i>
-                <i style="--h:58;--i:5"></i><i style="--h:82;--i:6"></i>
-                <i style="--h:44;--i:7"></i><i style="--h:92;--i:8"></i>
-                <i style="--h:64;--i:9"></i><i style="--h:74;--i:10"></i>
-                <i style="--h:45;--i:11"></i><i style="--h:88;--i:12"></i>
-                <i style="--h:56;--i:13"></i><i style="--h:68;--i:14"></i>
-                <i style="--h:38;--i:15"></i><i style="--h:76;--i:16"></i>
-              </div>
+              <a class="note-link" href="#about">
+                <span data-i18n="hero.readProfile">查看个人简介</span><span aria-hidden="true">↓</span>
+              </a>
             </aside>
           </div>
-
-          <div class="signal-feed" aria-hidden="true">
-            <span class="feed-label" data-i18n="signal.label">// 实时信号</span>
-            <div class="feed-window">
-              <div class="feed-track">
-                <span data-i18n="signal.java">Java 服务运行正常</span>
-                <span data-i18n="signal.agents">AI Agent 已同步</span>
-                <span data-i18n="signal.kafka">Kafka 数据流活跃</span>
-                <span data-i18n="signal.rag">RAG 索引就绪</span>
-                <span data-i18n="signal.redis">Redis 缓存已预热</span>
-                <span data-i18n="signal.java">Java 服务运行正常</span>
-                <span data-i18n="signal.agents">AI Agent 已同步</span>
-                <span data-i18n="signal.kafka">Kafka 数据流活跃</span>
-                <span data-i18n="signal.rag">RAG 索引就绪</span>
-                <span data-i18n="signal.redis">Redis 缓存已预热</span>
-              </div>
-            </div>
+          <div class="hero-coordinate" aria-hidden="true">
+            <span>CHINA / UTC+08:00</span>
+            <span>JAVA · DISTRIBUTED SYSTEMS · APPLIED AI</span>
           </div>
         </section>
 
@@ -150,7 +123,7 @@ layout: null
           <div class="section-grid">
             <div class="section-index">
               <span class="section-number">01</span>
-              <span class="section-name" data-i18n="nav.about">关于</span>
+              <span class="section-name" data-i18n="section.about">ABOUT / 关于</span>
             </div>
             <div class="section-content">
               <div class="about-layout reveal">
@@ -177,41 +150,43 @@ layout: null
           <div class="section-grid">
             <div class="section-index">
               <span class="section-number">02</span>
-              <span class="section-name" data-i18n="nav.capabilities">能力</span>
+              <span class="section-name" data-i18n="section.systems">SYSTEMS / 能力</span>
             </div>
             <div class="section-content">
               <p class="section-kicker" data-i18n="capabilities.kicker">CORE SYSTEMS</p>
               <h2 class="display-heading" id="capabilities-heading" data-i18n="capabilities.heading">从服务架构到智能工作流。</h2>
               <div class="capability-grid reveal">
                 <article class="capability">
-                  <svg class="capability-icon" viewBox="0 0 48 48" aria-hidden="true">
-                    <path d="m16 10-10 14 10 14M32 10l10 14-10 14M28 6l-8 36" fill="none" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                  <h3 data-i18n="capabilities.backend.title">后端工程</h3>
-                  <p data-i18n="capabilities.backend.body">使用 Java、Spring Boot 与清晰架构构建可扩展服务。</p>
+                  <span class="capability-number">01</span>
+                  <div>
+                    <h3 data-i18n="capabilities.backend.title">后端工程</h3>
+                    <p data-i18n="capabilities.backend.body">使用 Java、Spring Boot 与清晰架构构建可扩展服务。</p>
+                  </div>
+                  <span class="capability-stack">JAVA / SPRING BOOT</span>
                 </article>
                 <article class="capability">
-                  <svg class="capability-icon" viewBox="0 0 48 48" aria-hidden="true">
-                    <path d="M18 8a8 8 0 0 0-7 12 8 8 0 0 0 3 15 8 8 0 0 0 14 4 8 8 0 0 0 9-13 8 8 0 0 0-7-14 8 8 0 0 0-12-4Zm6 1v30M13 24h22M18 15c4 3 4 15 0 19M30 15c-4 3-4 15 0 19" fill="none" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                  <h3 data-i18n="capabilities.agent.title">AI Agent 开发</h3>
-                  <p data-i18n="capabilities.agent.body">设计具备工具调用、记忆、检索和可靠执行边界的 Agent。</p>
+                  <span class="capability-number">02</span>
+                  <div>
+                    <h3 data-i18n="capabilities.agent.title">AI Agent 开发</h3>
+                    <p data-i18n="capabilities.agent.body">设计具备工具调用、记忆、检索和可靠执行边界的 Agent。</p>
+                  </div>
+                  <span class="capability-stack">RAG / TOOLS / MEMORY</span>
                 </article>
                 <article class="capability">
-                  <svg class="capability-icon" viewBox="0 0 48 48" aria-hidden="true">
-                    <ellipse cx="24" cy="11" rx="15" ry="6" fill="none" stroke="currentColor" stroke-width="2"/>
-                    <path d="M9 11v13c0 3 7 6 15 6s15-3 15-6V11M9 24v13c0 3 7 6 15 6s15-3 15-6V24" fill="none" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                  <h3 data-i18n="capabilities.system.title">系统设计</h3>
-                  <p data-i18n="capabilities.system.body">围绕 MySQL、Redis、Kafka 与高并发场景设计稳定架构。</p>
+                  <span class="capability-number">03</span>
+                  <div>
+                    <h3 data-i18n="capabilities.system.title">系统设计</h3>
+                    <p data-i18n="capabilities.system.body">围绕 MySQL、Redis、Kafka 与高并发场景设计稳定架构。</p>
+                  </div>
+                  <span class="capability-stack">MYSQL / REDIS / KAFKA</span>
                 </article>
                 <article class="capability">
-                  <svg class="capability-icon" viewBox="0 0 48 48" aria-hidden="true">
-                    <circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
-                    <path d="M24 5v6M24 37v6M5 24h6M37 24h6M10.5 10.5l4.2 4.2M33.3 33.3l4.2 4.2M37.5 10.5l-4.2 4.2M14.7 33.3l-4.2 4.2" stroke="currentColor" stroke-width="2"/>
-                  </svg>
-                  <h3 data-i18n="capabilities.devtools.title">工程与自动化</h3>
-                  <p data-i18n="capabilities.devtools.body">通过 Docker、Linux、Codex Skills 与自动化提升交付效率。</p>
+                  <span class="capability-number">04</span>
+                  <div>
+                    <h3 data-i18n="capabilities.devtools.title">工程与自动化</h3>
+                    <p data-i18n="capabilities.devtools.body">通过 Docker、Linux、Codex Skills 与自动化提升交付效率。</p>
+                  </div>
+                  <span class="capability-stack">DOCKER / LINUX / CODEX</span>
                 </article>
               </div>
             </div>
@@ -222,13 +197,14 @@ layout: null
           <div class="section-grid">
             <div class="section-index">
               <span class="section-number">03</span>
-              <span class="section-name" data-i18n="nav.work">项目</span>
+              <span class="section-name" data-i18n="section.work">SELECTED WORK / 项目</span>
             </div>
             <div class="section-content">
               <p class="section-kicker" data-i18n="work.kicker">SELECTED WORK</p>
               <h2 class="display-heading" id="work-heading" data-i18n="work.heading">正在构建的智能产品。</h2>
-              <div class="project-stack">
-                <article class="project-card reveal">
+              <p class="github-sync" id="github-sync-status" hidden></p>
+              <div class="project-stack" id="github-projects" data-github-user="AustinElite">
+                <article class="project-card project-card-featured reveal">
                   <div class="project-copy">
                     <span class="project-number">01 / 2026</span>
                     <h3>Austin Music</h3>
@@ -240,22 +216,13 @@ layout: null
                       <span data-i18n="work.view">查看 GitHub</span><span aria-hidden="true">↗</span>
                     </a>
                   </div>
-                  <div class="project-visual" aria-hidden="true">
-                    <div class="wave-glow"></div>
-                    <div class="waveform">
-                      <i style="--h:22;--i:1"></i><i style="--h:38;--i:2"></i><i style="--h:64;--i:3"></i><i style="--h:28;--i:4"></i>
-                      <i style="--h:74;--i:5"></i><i style="--h:48;--i:6"></i><i style="--h:92;--i:7"></i><i style="--h:54;--i:8"></i>
-                      <i style="--h:34;--i:9"></i><i style="--h:82;--i:10"></i><i style="--h:46;--i:11"></i><i style="--h:100;--i:12"></i>
-                      <i style="--h:62;--i:13"></i><i style="--h:30;--i:14"></i><i style="--h:78;--i:15"></i><i style="--h:42;--i:16"></i>
-                      <i style="--h:88;--i:17"></i><i style="--h:56;--i:18"></i><i style="--h:72;--i:19"></i><i style="--h:36;--i:20"></i>
-                      <i style="--h:68;--i:21"></i><i style="--h:44;--i:22"></i><i style="--h:94;--i:23"></i><i style="--h:52;--i:24"></i>
-                      <i style="--h:26;--i:25"></i><i style="--h:76;--i:26"></i><i style="--h:40;--i:27"></i><i style="--h:58;--i:28"></i>
-                      <i style="--h:84;--i:29"></i><i style="--h:32;--i:30"></i><i style="--h:70;--i:31"></i><i style="--h:48;--i:32"></i>
-                    </div>
-                  </div>
+                  <a class="project-media" href="https://github.com/AustinElite/AustinMusic" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看 Austin Music">
+                    <img src="/assets/projects/austin-music.png" alt="Austin Music AI 音乐播放器产品界面" width="1365" height="900" loading="lazy">
+                    <span>PRODUCT VIEW / AUSTIN MUSIC</span>
+                  </a>
                 </article>
 
-                <article class="project-card reveal">
+                <article class="project-card project-card-signal reveal">
                   <div class="project-copy">
                     <span class="project-number">02 / 2026</span>
                     <h3>AI Market Radar</h3>
@@ -267,8 +234,17 @@ layout: null
                       <span data-i18n="work.view">查看 GitHub</span><span aria-hidden="true">↗</span>
                     </a>
                   </div>
-                  <div class="project-visual" aria-hidden="true">
-                    <div class="radar"></div>
+                  <div class="signal-terminal" aria-hidden="true">
+                    <div class="signal-terminal-head">
+                      <span>INTELLIGENCE PIPELINE</span><span>ACTIVE</span>
+                    </div>
+                    <ol>
+                      <li><span>01</span><strong>COLLECT</strong><i>24H SIGNALS</i></li>
+                      <li><span>02</span><strong>VERIFY</strong><i>MULTI-SOURCE</i></li>
+                      <li><span>03</span><strong>RANK</strong><i>RELEVANCE</i></li>
+                      <li><span>04</span><strong>BRIEF</strong><i>DECISION READY</i></li>
+                    </ol>
+                    <div class="signal-terminal-foot"><span>AI / TECH / MARKET</span><span>→</span></div>
                   </div>
                 </article>
               </div>
@@ -280,7 +256,7 @@ layout: null
           <div class="section-grid">
             <div class="section-index">
               <span class="section-number">04</span>
-              <span class="section-name" data-i18n="articles.logLabel">技术日志</span>
+              <span class="section-name" data-i18n="section.notes">FIELD NOTES / 文章</span>
             </div>
             <div class="section-content">
               <div class="articles-heading-row">
@@ -288,9 +264,8 @@ layout: null
                   <p class="section-kicker" data-i18n="articles.kicker">最新文章</p>
                   <h2 class="display-heading" id="articles-heading" data-i18n="articles.heading">记录后端系统与智能工程。</h2>
                 </div>
-                <a class="write-button" href="/admin/">
-                  <span aria-hidden="true">✎</span>
-                  <span data-i18n="write.label">写作 / 上传</span>
+                <a class="section-heading-link" href="/articles/">
+                  <span data-i18n="articles.all">查看全部文章</span><span aria-hidden="true">↗</span>
                 </a>
               </div>
 
@@ -361,7 +336,7 @@ layout: null
           <div class="section-grid">
             <div class="section-index">
               <span class="section-number">05</span>
-              <span class="section-name" data-i18n="experiments.label">实验项目</span>
+              <span class="section-name" data-i18n="section.lab">LAB / 实验</span>
             </div>
             <div class="section-content">
               <p class="section-kicker" data-i18n="experiments.kicker">精选实验</p>
@@ -406,15 +381,19 @@ layout: null
       </main>
 
       <footer class="site-footer">
-        <strong>AUSTINELITE</strong>
-        <span class="footer-center" data-i18n="footer.role">Java 后端工程师 · AI Agent 开发者</span>
+        <div class="footer-signature">
+          <span aria-hidden="true">+</span>
+          <strong>AUSTINELITE</strong>
+        </div>
+        <span class="footer-center">CHINA / UTC+08:00</span>
         <div class="footer-links">
           <a href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="/admin/" data-i18n="footer.console">Console</a>
           <span>© <span data-current-year>2026</span></span>
         </div>
       </footer>
     </div>
 
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main.js?v=20260711-github-repos"></script>
   </body>
 </html>

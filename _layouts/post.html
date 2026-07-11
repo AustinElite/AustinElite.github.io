@@ -1,9 +1,9 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="{{ page.lang | default: site.lang }}" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#05070b">
+    <meta name="theme-color" content="#090909">
     <meta name="description" content="{{ page.description | escape }}">
     <meta name="author" content="{{ page.author | default: site.author | default: 'Austin' }}">
     <meta property="og:type" content="article">
@@ -14,7 +14,8 @@
     <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">
     <link rel="canonical" href="{{ page.url | absolute_url }}">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css?v=20260711-github-repos">
+    <link rel="stylesheet" href="/assets/css/midnight.css?v=20260711-midnight">
     <title>{{ page.title }} — AustinElite</title>
     <script>
       (() => {
@@ -43,9 +44,6 @@
           <button class="control-button" id="theme-toggle" type="button" aria-label="切换到亮色主题" aria-pressed="true">
             <span class="theme-icon" aria-hidden="true">☀</span>
           </button>
-          <a class="write-button" href="/admin/">
-            <span aria-hidden="true">✎</span><span data-i18n="write.label">写作 / 上传</span>
-          </a>
           <button class="menu-button" id="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false">
             <span class="menu-icon" aria-hidden="true"></span>
           </button>
@@ -55,7 +53,6 @@
       <nav class="mobile-menu" id="mobile-menu" aria-label="移动端导航">
         <a href="/" aria-label="返回首页" data-i18n="nav.home">首页</a>
         <a href="/articles/" data-i18n="nav.articles">文章</a>
-        <a href="/admin/" data-i18n="write.label">写作 / 上传</a>
       </nav>
 
       <main>
@@ -109,17 +106,18 @@
       </main>
 
       <footer class="site-footer">
-        <strong>AUSTINELITE</strong>
-        <span class="footer-center" data-i18n="articles.logLabel">技术日志</span>
+        <div class="footer-signature"><span aria-hidden="true">+</span><strong>AUSTINELITE</strong></div>
+        <span class="footer-center">CHINA / UTC+08:00</span>
         <div class="footer-links">
           <a href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="/admin/" data-i18n="footer.console">Console</a>
           <span>© <span data-current-year>2026</span></span>
         </div>
       </footer>
     </div>
 
     <button class="back-to-top" type="button" aria-label="返回顶部">↑</button>
-    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/main.js?v=20260711-github-repos"></script>
     <script src="/assets/js/post.js"></script>
   </body>
 </html>

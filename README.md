@@ -30,3 +30,14 @@ Open `http://localhost:8000/admin/`.
 5. Commit to `main`.
 
 GitHub Pages will rebuild the article detail page, homepage feed, article index, and sitemap automatically.
+
+## Dynamic GitHub projects
+
+The homepage project section is generated from public repositories on the `AustinElite` GitHub account.
+
+- The browser first reads `assets/data/github-repos.json`.
+- `.github/workflows/sync-repos.yml` checks for changes every 6 hours and can also be run manually from the Actions tab.
+- `scripts/sync-github-repos.mjs` talks to the GitHub API with the workflow token, so it avoids the low anonymous API limit.
+- If the snapshot is missing, the browser tries a live GitHub API refresh and falls back to the static project cards if GitHub is rate-limited.
+
+To change the account, update `data-github-user` in `index.html` and `GITHUB_USER` in `.github/workflows/sync-repos.yml`.
