@@ -3,21 +3,26 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#090909">
+    <meta name="theme-color" content="#05070b">
     <meta name="description" content="{{ page.description | default: site.description | escape }}">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css?v=20260711-github-repos">
-    <link rel="stylesheet" href="/assets/css/midnight.css?v=20260711-midnight">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <title>{{ page.title | default: site.title }}</title>
     <script>
       (() => {
-        const saved = localStorage.getItem("austinelite-theme");
-        document.documentElement.dataset.theme = saved || "dark";
+        const savedTheme = localStorage.getItem("austinelite-theme");
+        const prefersLight = matchMedia("(prefers-color-scheme: light)").matches;
+        const theme = savedTheme || (prefersLight ? "light" : "dark");
+        const savedLanguage = localStorage.getItem("austinelite-language");
+        const language = savedLanguage || (navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.language = language;
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
       })();
     </script>
   </head>
   <body data-page="{{ page.page_type | default: 'page' }}">
     {{ content }}
-    <script src="/assets/js/main.js?v=20260711-github-repos"></script>
+    <script src="/assets/js/main.js"></script>
   </body>
 </html>

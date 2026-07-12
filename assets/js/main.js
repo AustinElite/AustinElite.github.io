@@ -1,7 +1,8 @@
-﻿const translations = {
+const translations = {
   zh: {
     "meta.title": "AustinElite｜Java 后端工程师与 AI Agent 开发者",
     "meta.description": "AustinElite 的个人主页，展示 Java 后端、分布式系统、AI Agent、LLM 项目与技术文章。",
+    "skip": "跳转到主要内容",
     "nav.about": "关于",
     "nav.capabilities": "能力",
     "nav.work": "项目",
@@ -9,21 +10,10 @@
     "nav.contact": "联系",
     "write.label": "写作 / 上传",
     "write.aria": "进入文章写作后台",
-    "hero.eyebrow": "// AUSTINELITE · 智能工程",
-    "hero.signature": "让智能，真正运行。",
+    "hero.eyebrow": "// 系统在线 · 构建智能后端",
     "hero.backend": "Java 后端工程师",
     "hero.agent": "AI Agent 开发者",
-    "hero.tagline": "构建可靠的后端系统，也构建能进入真实业务的 AI。",
-    "hero.viewWork": "浏览项目",
-    "hero.noteAria": "当前工作方向",
-    "hero.nowLabel": "NOW / 2026 构建记录",
-    "hero.nowBody": "正在把后端工程、检索与 Agent 工作流，组合成可观察、可恢复、可交付的智能产品。",
-    "hero.readProfile": "查看个人简介",
-    "section.about": "ABOUT / 关于",
-    "section.systems": "SYSTEMS / 能力",
-    "section.work": "SELECTED WORK / 项目",
-    "section.notes": "FIELD NOTES / 文章",
-    "section.lab": "LAB / 实验",
+    "hero.tagline": "构建可扩展的系统，创造真正有价值的智能。",
     "status.operational": "系统状态 · 运行正常",
     "status.aria": "系统状态",
     "status.architecture": "架构",
@@ -60,17 +50,6 @@
     "work.music.body": "基于 Next.js 的 AI 音乐播放器，融合本地曲库、Agent 搜索、全网检索、歌词与对话式点歌。",
     "work.radar.body": "面向 Codex 的热点情报 Skill，自动收集、核验、去重、排序并总结 AI、科技与市场信号。",
     "work.view": "查看 GitHub",
-    "github.loading": "正在同步 GitHub 仓库",
-    "github.live": "已同步 GitHub 公开仓库",
-    "github.snapshot": "已加载站内仓库快照",
-    "github.cached": "正在展示缓存仓库数据",
-    "github.error": "GitHub 同步失败，保留本地项目",
-    "github.empty": "暂未找到可展示的公开仓库",
-    "github.updated": "更新于",
-    "github.stars": "星标",
-    "github.forks": "分支",
-    "github.homepage": "打开演示",
-    "github.descriptionFallback": "这个仓库还没有填写描述，后续会自动显示 GitHub 上的最新描述。",
     "articles.heading": "记录后端系统与智能工程。",
     "articles.kicker": "最新文章",
     "articles.logLabel": "技术日志",
@@ -98,7 +77,139 @@
     "contact.kicker": "开放合作",
     "contact.heading": "一起构建真正有价值的产品。",
     "footer.role": "Java 后端工程师 · AI Agent 开发者",
-    "footer.console": "Console",
+    "articles.page.kicker": "技术日志",
+    "articles.page.title": "技术文章与工程记录。",
+    "articles.page.description": "关于 Java 后端、系统设计、AI Agent、LLM 与生产工程的实践记录。",
+    "articles.search": "搜索文章",
+    "articles.empty": "没有找到匹配的文章。",
+    "filter.all": "全部",
+    "admin.title": "文章写作控制台",
+    "admin.meta.title": "AustinElite 写作控制台",
+    "admin.subtitle": "在浏览器中编写 Markdown、预览文章，并安全地跳转到 GitHub 提交。",
+    "admin.status.aria": "发布状态",
+    "admin.connection.safe": "安全本地模式",
+    "admin.connection.branch": "分支",
+    "admin.connection.target": "目标",
+    "admin.section.new": "01 / 新文章",
+    "admin.section.ready": "就绪",
+    "admin.label.title": "标题",
+    "admin.label.titleEn": "英文标题",
+    "admin.label.language": "语言",
+    "admin.label.date": "日期",
+    "admin.language.zh": "中文",
+    "admin.language.en": "英文",
+    "admin.target": "目标：",
+    "admin.label.summary": "摘要",
+    "admin.label.tags": "标签",
+    "admin.tagsHelp": "使用英文逗号分隔，最多建议 6 个。",
+    "admin.featured": "精选",
+    "admin.published": "发布",
+    "admin.cover": "封面",
+    "admin.coverUpload": "上传封面",
+    "admin.coverHelp": "点击或拖放图片 / 建议 1200 x 630",
+    "admin.coverPreview": "文章封面预览",
+    "admin.coverNote": "图片不会上传到第三方。发布时请将它放到",
+    "admin.security": "本站不保存 GitHub 密码、PAT 或 OAuth Secret。发布按钮只会把 Markdown 交给 GitHub 官方编辑页面。",
+    "admin.section.markdown": "02 / Markdown",
+    "admin.autosaveReady": "自动保存就绪",
+    "admin.toolbar": "Markdown 工具",
+    "admin.tool.bold": "粗体",
+    "admin.tool.italic": "斜体",
+    "admin.tool.heading": "标题",
+    "admin.tool.list": "列表",
+    "admin.tool.inlineCode": "行内代码",
+    "admin.tool.codeBlock": "代码块",
+    "admin.tool.image": "图片",
+    "admin.words": "字数",
+    "admin.readingTime": "阅读时间",
+    "admin.minute": "分钟",
+    "admin.section.preview": "03 / 实时预览",
+    "admin.openSite": "打开网站 ↗",
+    "admin.action.save": "保存草稿",
+    "admin.action.copy": "复制 Markdown",
+    "admin.action.download": "下载 .md",
+    "admin.action.publish": "发布到 GitHub ↗",
+    "menu.open": "打开导航菜单",
+    "menu.close": "关闭导航菜单"
+  },
+  en: {
+    "meta.title": "AustinElite — Java Backend Engineer & AI Agent Developer",
+    "meta.description": "AustinElite builds scalable Java backend systems, AI agents, LLM-powered tools and technical writing.",
+    "skip": "Skip to main content",
+    "nav.about": "About",
+    "nav.capabilities": "Capabilities",
+    "nav.work": "Work",
+    "nav.articles": "Articles",
+    "nav.contact": "Contact",
+    "write.label": "Write / Upload",
+    "write.aria": "Open the private writing console",
+    "hero.eyebrow": "// SYSTEM ONLINE · BUILDING THE INTELLIGENT BACKEND",
+    "hero.backend": "Java Backend Engineer",
+    "hero.agent": "AI Agent Developer",
+    "hero.tagline": "Build systems that scale. Build intelligence that matters.",
+    "status.operational": "SYSTEM STATUS · OPERATIONAL",
+    "status.aria": "System status",
+    "status.architecture": "Architecture",
+    "status.services": "Services",
+    "status.agents": "AI Agents",
+    "status.uptime": "Uptime",
+    "status.online": "Online",
+    "status.active": "Active",
+    "signal.label": "// Signal feed",
+    "signal.java": "Java services healthy",
+    "signal.agents": "AI agents synchronized",
+    "signal.kafka": "Kafka streams active",
+    "signal.rag": "RAG index ready",
+    "signal.redis": "Redis cache warm",
+    "about.kicker": "ENGINEERING INTELLIGENCE",
+    "about.heading": "Engineering the systems behind intelligent products.",
+    "about.body": "I work at the intersection of Java backend engineering, distributed systems and applied AI, turning LLMs, RAG and agent workflows into reliable products built for production.",
+    "facts.location": "Location",
+    "facts.focus": "Focus",
+    "facts.stack": "Stack",
+    "facts.goal": "Goal",
+    "capabilities.kicker": "CORE SYSTEMS",
+    "capabilities.heading": "From service architecture to intelligent workflows.",
+    "capabilities.backend.title": "Backend Engineering",
+    "capabilities.backend.body": "Scalable Java and Spring Boot services built around clear architecture.",
+    "capabilities.agent.title": "AI Agent Development",
+    "capabilities.agent.body": "Agents with tool use, memory, retrieval and reliable execution boundaries.",
+    "capabilities.system.title": "System Design",
+    "capabilities.system.body": "Stable architectures for MySQL, Redis, Kafka and high-concurrency workloads.",
+    "capabilities.devtools.title": "Engineering Automation",
+    "capabilities.devtools.body": "Faster delivery through Docker, Linux, Codex Skills and automation.",
+    "work.kicker": "SELECTED WORK",
+    "work.heading": "Intelligent products in motion.",
+    "work.music.body": "An AI music player built with Next.js, combining local libraries, agent search, network retrieval, lyrics and conversational requests.",
+    "work.radar.body": "A Codex intelligence skill that collects, verifies, deduplicates, ranks and summarizes signals across AI, technology and markets.",
+    "work.view": "View on GitHub",
+    "articles.heading": "Notes on backend systems and intelligent engineering.",
+    "articles.kicker": "Latest articles",
+    "articles.logLabel": "Intelligence Log",
+    "articles.logPath": "AUSTINELITE / INTELLIGENCE LOG",
+    "articles.featured": "Featured",
+    "articles.agent.title": "Building Reliable AI Agent Backends",
+    "articles.agent.description": "A production-minded architecture for tool use, state management and observability.",
+    "articles.event.title": "Event-Driven Architecture with Spring Boot",
+    "articles.workflow.title": "Designing Effective AI Agent Workflows",
+    "articles.observability.title": "Observability for Modern Backend Systems",
+    "articles.read": "Read article",
+    "articles.readTime": "min read",
+    "articles.updated": "Updated",
+    "articles.all": "View all articles",
+    "post.onPage": "On this page",
+    "post.viewSource": "View source ↗",
+    "post.copy": "Copy link",
+    "nav.home": "Home",
+    "experiments.label": "Experiments",
+    "experiments.kicker": "Selected experiments",
+    "experiments.heading": "Exploring the edges of expression, content and agents.",
+    "experiments.libai": "Transforming Li Bai's personality, aesthetics and expression into an AI Skill.",
+    "experiments.wechat": "A content workflow for ideation, titles, long-form writing and revision.",
+    "experiments.github": "Ongoing Java, AI and open-source experiments.",
+    "contact.kicker": "OPEN FOR COLLABORATION",
+    "contact.heading": "Let's build something that matters.",
+    "footer.role": "Java Backend Engineer · AI Agent Developer",
     "articles.page.kicker": "INTELLIGENCE LOG",
     "articles.page.title": "Technical writing and engineering notes.",
     "articles.page.description": "Field notes on Java backends, system design, AI agents, LLMs and production engineering.",
@@ -158,7 +269,9 @@
 
 const languageButton = document.querySelector("#language-toggle");
 const themeButton = document.querySelector("#theme-toggle");
-const themeIcon = themeButton?.querySelector(".theme-icon");
+const languageLabel = languageButton?.querySelector(".language-label-long");
+const compactLanguageLabel = languageButton?.querySelector(".mobile-only");
+const themeLabel = themeButton?.querySelector("[data-theme-label]");
 const themeMeta = document.querySelector('meta[name="theme-color"]');
 const menuButton = document.querySelector("#menu-toggle");
 const mobileMenu = document.querySelector("#mobile-menu");
@@ -221,6 +334,13 @@ function applyLanguage(language) {
     "aria-label",
     language === "zh" ? "Switch to English" : "切换到中文"
   );
+  if (languageLabel) languageLabel.textContent = language === "zh" ? "EN" : "中文";
+  if (compactLanguageLabel) compactLanguageLabel.textContent = language === "zh" ? "EN" : "中";
+  if (languageButton && !languageLabel && !compactLanguageLabel) {
+    languageButton.textContent = language === "zh" ? "EN" : "中文";
+  }
+  const isDark = document.documentElement.dataset.theme === "dark";
+  if (themeLabel) themeLabel.textContent = getThemeActionLabel(isDark, language);
   themeButton?.setAttribute(
     "aria-label",
     document.documentElement.dataset.theme === "dark"
@@ -244,10 +364,15 @@ languageButton?.addEventListener("click", () => {
   applyLanguage(currentLanguage);
 });
 
+function getThemeActionLabel(isDark, language = currentLanguage) {
+  if (isDark) return language === "zh" ? "日间" : "SUN";
+  return language === "zh" ? "夜间" : "MOON";
+}
+
 function applyTheme(theme) {
   const isDark = theme === "dark";
   document.documentElement.dataset.theme = theme;
-  themeIcon && (themeIcon.textContent = isDark ? "☀" : "☾");
+  if (themeLabel) themeLabel.textContent = getThemeActionLabel(isDark);
   themeButton?.setAttribute(
     "aria-label",
     isDark
@@ -255,10 +380,16 @@ function applyTheme(theme) {
       : (currentLanguage === "zh" ? "切换到暗色主题" : "Switch to dark theme")
   );
   themeButton?.setAttribute("aria-pressed", String(isDark));
-  themeMeta?.setAttribute("content", isDark ? "#090909" : "#f4f4f2");
+  themeMeta?.setAttribute("content", isDark ? "#05070b" : "#f4f4f2");
 }
 
-applyTheme(document.documentElement.dataset.theme || "dark");
+function getInitialTheme() {
+  const saved = localStorage.getItem("austinelite-theme");
+  if (saved === "light" || saved === "dark") return saved;
+  return matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+applyTheme(document.documentElement.dataset.theme || getInitialTheme());
 
 themeButton?.addEventListener("click", () => {
   const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
@@ -266,7 +397,8 @@ themeButton?.addEventListener("click", () => {
   applyTheme(next);
 });
 
-matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+const colorSchemeQuery = matchMedia("(prefers-color-scheme: dark)");
+colorSchemeQuery.addEventListener?.("change", (event) => {
   if (!localStorage.getItem("austinelite-theme")) {
     applyTheme(event.matches ? "dark" : "light");
   }
@@ -307,392 +439,6 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
-const githubProjectStack = document.querySelector("#github-projects");
-const githubSyncStatus = document.querySelector("#github-sync-status");
-const githubUser = githubProjectStack?.dataset.githubUser || "AustinElite";
-const githubSnapshotUrl = "/assets/data/github-repos.json";
-const githubCacheKey = `austinelite-github-repos-${githubUser}`;
-const githubCacheTtl = 1000 * 60 * 10;
-let activeGithubRepos = [];
-let activeGithubState = "live";
-
-function githubText(key) {
-  return translations[currentLanguage]?.[key] || translations.en[key] || key;
-}
-
-function setGithubStatus(state, count = 0) {
-  if (!githubSyncStatus) return;
-
-  activeGithubState = state;
-  githubSyncStatus.hidden = false;
-  githubSyncStatus.dataset.state = state;
-
-  const countText = count ? ` · ${count}` : "";
-  if (state === "loading") {
-    githubSyncStatus.textContent = githubText("github.loading");
-  } else if (state === "snapshot") {
-    githubSyncStatus.textContent = `${githubText("github.snapshot")}${countText}`;
-  } else if (state === "cached") {
-    githubSyncStatus.textContent = `${githubText("github.cached")}${countText}`;
-  } else if (state === "error") {
-    githubSyncStatus.textContent = githubText("github.error");
-  } else if (state === "empty") {
-    githubSyncStatus.textContent = githubText("github.empty");
-  } else {
-    githubSyncStatus.textContent = `${githubText("github.live")}${countText}`;
-  }
-}
-
-function readGithubCache() {
-  try {
-    const cached = JSON.parse(localStorage.getItem(githubCacheKey) || "null");
-    if (!cached || !Array.isArray(cached.repos)) return null;
-    return cached;
-  } catch (error) {
-    return null;
-  }
-}
-
-function writeGithubCache(repos) {
-  try {
-    localStorage.setItem(githubCacheKey, JSON.stringify({ cachedAt: Date.now(), repos }));
-  } catch (error) {
-    // Cache is only a performance helper; rendering should not depend on it.
-  }
-}
-
-async function readGithubSnapshot() {
-  const response = await fetch(`${githubSnapshotUrl}?v=${Date.now()}`, {
-    cache: "no-store",
-    headers: { Accept: "application/json" }
-  });
-
-  if (!response.ok) throw new Error(`Snapshot ${response.status}`);
-
-  const snapshot = await response.json();
-  const repos = selectGithubRepos(snapshot.repos || snapshot);
-
-  return { repos };
-}
-
-function formatRepoName(name) {
-  return name.replace(/[-_]+/g, " ");
-}
-
-function formatRepoDate(dateString) {
-  const date = new Date(dateString);
-  if (Number.isNaN(date.getTime())) return "";
-
-  const locale = currentLanguage === "zh" ? "zh-CN" : "en";
-  return new Intl.DateTimeFormat(locale, {
-    year: "numeric",
-    month: currentLanguage === "zh" ? "2-digit" : "short",
-    day: "2-digit"
-  }).format(date);
-}
-
-function safeExternalUrl(value) {
-  try {
-    const url = new URL(value);
-    return url.protocol === "http:" || url.protocol === "https:" ? url.href : "";
-  } catch (error) {
-    return "";
-  }
-}
-
-function repoKeywordScore(repo) {
-  const keywords = [
-    "ai",
-    "agent",
-    "llm",
-    "rag",
-    "java",
-    "spring",
-    "backend",
-    "codex",
-    "skill",
-    "prompt",
-    "music",
-    "system"
-  ];
-  const searchText = [repo.name, repo.description, repo.language, ...(repo.topics || [])]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
-
-  return keywords.reduce((score, keyword) => score + (searchText.includes(keyword) ? 8 : 0), 0);
-}
-
-function repoRecencyScore(repo) {
-  const timestamp = new Date(repo.pushed_at || repo.updated_at || 0).getTime();
-  if (!timestamp) return 0;
-
-  const days = (Date.now() - timestamp) / 86400000;
-  return Math.max(0, 42 - Math.min(days, 42));
-}
-
-function repoScore(repo) {
-  const preferredLanguage = ["Java", "TypeScript", "JavaScript", "Python"].includes(repo.language) ? 10 : 0;
-  return (
-    repoKeywordScore(repo) +
-    repoRecencyScore(repo) +
-    preferredLanguage +
-    (repo.stargazers_count || 0) * 7 +
-    (repo.forks_count || 0) * 4
-  );
-}
-
-function selectGithubRepos(repos) {
-  const featuredOrder = ["austinmusic", "ai-market-radar"];
-
-  return repos
-    .filter((repo) => {
-      const isProfileSite = repo.name.toLowerCase() === `${githubUser.toLowerCase()}.github.io`;
-      return !repo.fork && !repo.archived && !repo.disabled && !isProfileSite;
-    })
-    .sort((first, second) => {
-      const firstFeatured = featuredOrder.indexOf(first.name.toLowerCase());
-      const secondFeatured = featuredOrder.indexOf(second.name.toLowerCase());
-      if (firstFeatured !== secondFeatured) {
-        if (firstFeatured === -1) return 1;
-        if (secondFeatured === -1) return -1;
-        return firstFeatured - secondFeatured;
-      }
-
-      const scoreDiff = repoScore(second) - repoScore(first);
-      if (scoreDiff) return scoreDiff;
-      return new Date(second.pushed_at || second.updated_at) - new Date(first.pushed_at || first.updated_at);
-    })
-    .slice(0, 4);
-}
-
-function repoTags(repo) {
-  const tags = [repo.language, ...(repo.topics || [])]
-    .filter(Boolean)
-    .map((tag) => tag.replace(/-/g, " "));
-
-  if (!tags.length) tags.push("Open Source");
-  return [...new Set(tags)].slice(0, 5);
-}
-
-function createGithubVisual(repo) {
-  const normalizedName = repo.name.toLowerCase();
-
-  if (normalizedName === "austinmusic") {
-    const media = document.createElement("a");
-    media.className = "project-media";
-    media.href = repo.html_url;
-    media.target = "_blank";
-    media.rel = "noopener noreferrer";
-    media.setAttribute("aria-label", "Austin Music on GitHub");
-
-    const image = document.createElement("img");
-    image.src = "/assets/projects/austin-music.png";
-    image.alt = "Austin Music AI music player interface";
-    image.width = 1365;
-    image.height = 900;
-    image.loading = "lazy";
-
-    const label = document.createElement("span");
-    label.textContent = "PRODUCT VIEW / AUSTIN MUSIC";
-    media.append(image, label);
-    return media;
-  }
-
-  if (normalizedName === "ai-market-radar") {
-    const terminal = document.createElement("div");
-    terminal.className = "signal-terminal";
-    terminal.setAttribute("aria-hidden", "true");
-    terminal.innerHTML = `
-      <div class="signal-terminal-head"><span>INTELLIGENCE PIPELINE</span><span>ACTIVE</span></div>
-      <ol>
-        <li><span>01</span><strong>COLLECT</strong><i>24H SIGNALS</i></li>
-        <li><span>02</span><strong>VERIFY</strong><i>MULTI-SOURCE</i></li>
-        <li><span>03</span><strong>RANK</strong><i>RELEVANCE</i></li>
-        <li><span>04</span><strong>BRIEF</strong><i>DECISION READY</i></li>
-      </ol>
-      <div class="signal-terminal-foot"><span>AI / TECH / MARKET</span><span>→</span></div>
-    `;
-    return terminal;
-  }
-
-  const visual = document.createElement("div");
-  visual.className = "project-visual project-visual-github";
-  visual.setAttribute("aria-hidden", "true");
-
-  const plate = document.createElement("div");
-  plate.className = "repo-plate";
-
-  const monogram = document.createElement("strong");
-  monogram.className = "repo-monogram";
-  monogram.textContent = repo.name.slice(0, 2).toUpperCase();
-
-  const lines = document.createElement("div");
-  lines.className = "repo-lines";
-
-  const seed = [...repo.name].reduce((total, char) => total + char.charCodeAt(0), 0);
-  Array.from({ length: 7 }, (_, index) => {
-    const line = document.createElement("i");
-    const width = 42 + ((seed + index * 19) % 54);
-    line.style.setProperty("--w", width);
-    lines.append(line);
-    return line;
-  });
-
-  plate.append(monogram, lines);
-  visual.append(plate);
-  return visual;
-}
-
-function createGithubProjectCard(repo, index) {
-  const card = document.createElement("article");
-  const normalizedName = repo.name.toLowerCase();
-  const featureClass = normalizedName === "austinmusic"
-    ? " project-card-featured"
-    : normalizedName === "ai-market-radar"
-      ? " project-card-signal"
-      : "";
-  card.className = `project-card reveal${featureClass}`;
-
-  const copy = document.createElement("div");
-  copy.className = "project-copy";
-
-  const number = document.createElement("span");
-  number.className = "project-number";
-  number.textContent = `${String(index + 1).padStart(2, "0")} / ${new Date(repo.created_at).getFullYear() || new Date().getFullYear()}`;
-
-  const title = document.createElement("h3");
-  title.textContent = formatRepoName(repo.name);
-
-  const description = document.createElement("p");
-  description.textContent = repo.description || githubText("github.descriptionFallback");
-
-  const meta = document.createElement("div");
-  meta.className = "project-meta";
-
-  [
-    `${githubText("github.updated")} ${formatRepoDate(repo.pushed_at || repo.updated_at)}`,
-    `${githubText("github.stars")} ${repo.stargazers_count || 0}`,
-    `${githubText("github.forks")} ${repo.forks_count || 0}`
-  ].forEach((text) => {
-    const item = document.createElement("span");
-    item.className = "project-metric";
-    item.textContent = text;
-    meta.append(item);
-  });
-
-  const tags = document.createElement("ul");
-  tags.className = "tag-list";
-  repoTags(repo).forEach((tag) => {
-    const item = document.createElement("li");
-    item.textContent = tag;
-    tags.append(item);
-  });
-
-  const githubLink = document.createElement("a");
-  githubLink.className = "text-link";
-  githubLink.href = repo.html_url;
-  githubLink.target = "_blank";
-  githubLink.rel = "noopener noreferrer";
-
-  const githubLabel = document.createElement("span");
-  githubLabel.textContent = githubText("work.view");
-  const githubArrow = document.createElement("span");
-  githubArrow.setAttribute("aria-hidden", "true");
-  githubArrow.textContent = "↗";
-  githubLink.append(githubLabel, githubArrow);
-
-  copy.append(number, title, description, meta, tags, githubLink);
-
-  const homepage = safeExternalUrl(repo.homepage);
-  if (homepage) {
-    const homepageLink = githubLink.cloneNode(false);
-    homepageLink.href = homepage;
-    homepageLink.style.marginLeft = "1rem";
-
-    const homepageLabel = document.createElement("span");
-    homepageLabel.textContent = githubText("github.homepage");
-    const homepageArrow = document.createElement("span");
-    homepageArrow.setAttribute("aria-hidden", "true");
-    homepageArrow.textContent = "↗";
-    homepageLink.append(homepageLabel, homepageArrow);
-    copy.append(homepageLink);
-  }
-
-  card.append(copy, createGithubVisual(repo));
-  return card;
-}
-
-function renderGithubProjects(repos, state = activeGithubState) {
-  if (!githubProjectStack || !repos.length) return;
-
-  activeGithubRepos = repos;
-  activeGithubState = state;
-
-  const cards = repos.map(createGithubProjectCard);
-  githubProjectStack.replaceChildren(...cards);
-  cards.forEach((card) => revealObserver.observe(card));
-  setGithubStatus(state, repos.length);
-}
-
-async function syncGithubProjects() {
-  if (!githubProjectStack) return;
-
-  const cached = readGithubCache();
-  if (cached?.repos?.length) {
-    renderGithubProjects(cached.repos, "cached");
-  } else {
-    setGithubStatus("loading");
-  }
-
-  try {
-    const snapshot = await readGithubSnapshot();
-    if (snapshot.repos.length) {
-      renderGithubProjects(snapshot.repos, "snapshot");
-      writeGithubCache(snapshot.repos);
-      return;
-    }
-  } catch (error) {
-    // The snapshot is generated by GitHub Actions. If it is missing locally, fall through to live API.
-  }
-
-  if (cached && Date.now() - cached.cachedAt < githubCacheTtl && activeGithubRepos.length) return;
-
-  try {
-    const endpoint = `https://api.github.com/users/${encodeURIComponent(githubUser)}/repos?sort=updated&direction=desc&per_page=100`;
-    const response = await fetch(endpoint, {
-      headers: { Accept: "application/vnd.github+json" }
-    });
-
-    if (!response.ok) throw new Error(`GitHub API ${response.status}`);
-
-    const repos = selectGithubRepos(await response.json());
-    if (!repos.length) {
-      setGithubStatus("empty");
-      return;
-    }
-
-    writeGithubCache(repos);
-    renderGithubProjects(repos, "live");
-  } catch (error) {
-    if (activeGithubRepos.length) {
-      setGithubStatus("cached", activeGithubRepos.length);
-    } else {
-      setGithubStatus("error");
-    }
-  }
-}
-
-window.addEventListener("austinelite:language", () => {
-  if (activeGithubRepos.length) {
-    renderGithubProjects(activeGithubRepos, activeGithubState);
-  } else if (githubSyncStatus && !githubSyncStatus.hidden) {
-    setGithubStatus(activeGithubState);
-  }
-});
-
-syncGithubProjects();
-
 document.querySelectorAll("[data-current-year]").forEach((element) => {
   element.textContent = String(new Date().getFullYear());
 });
@@ -701,7 +447,6 @@ const hero = document.querySelector(".hero");
 const pointerGlow = document.querySelector("#pointer-glow");
 
 hero?.addEventListener("pointermove", (event) => {
-  if (!pointerGlow) return;
   const rect = hero.getBoundingClientRect();
   pointerGlow.style.left = `${event.clientX - rect.left}px`;
   pointerGlow.style.top = `${event.clientY - rect.top}px`;

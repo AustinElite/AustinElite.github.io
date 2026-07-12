@@ -1,25 +1,37 @@
----
-layout: null
----
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>{{ "/" | absolute_url }}</loc>
+    <loc>https://austinelite.github.io/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>{{ "/articles/" | absolute_url }}</loc>
+    <loc>https://austinelite.github.io/articles/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  {% for post in site.posts %}
   <url>
-    <loc>{{ post.url | absolute_url }}</loc>
-    <lastmod>{{ post.updated | default: post.date | date_to_xmlschema }}</lastmod>
+    <loc>https://austinelite.github.io/articles/building-reliable-ai-agent-backends/</loc>
+    <lastmod>2026-06-08T00:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  {% endfor %}
+  <url>
+    <loc>https://austinelite.github.io/articles/event-driven-architecture-with-spring-boot/</loc>
+    <lastmod>2026-05-22T09:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://austinelite.github.io/articles/designing-effective-ai-agent-workflows/</loc>
+    <lastmod>2026-04-18T09:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://austinelite.github.io/articles/observability-for-modern-backend-systems/</loc>
+    <lastmod>2026-04-06T09:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
-

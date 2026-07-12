@@ -1,27 +1,29 @@
-﻿---
-layout: null
----
 <!doctype html>
 <html lang="zh-CN" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#090909">
+    <meta name="theme-color" content="#05070b">
     <meta name="description" content="AustinElite 的技术文章，涵盖 Java、系统设计、AI Agent、LLM 与生产工程。">
     <link rel="canonical" href="https://austinelite.github.io/articles/">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css?v=20260711-github-repos">
-    <link rel="stylesheet" href="/assets/css/midnight.css?v=20260711-midnight">
+    <link rel="stylesheet" href="/assets/css/main.css">
     <title>Articles — AustinElite</title>
     <script>
       (() => {
-        const saved = localStorage.getItem("austinelite-theme");
-        document.documentElement.dataset.theme = saved || "dark";
+        const savedTheme = localStorage.getItem("austinelite-theme");
+        const prefersLight = matchMedia("(prefers-color-scheme: light)").matches;
+        const theme = savedTheme || (prefersLight ? "light" : "dark");
+        const savedLanguage = localStorage.getItem("austinelite-language");
+        const language = savedLanguage || (navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.language = language;
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
       })();
     </script>
   </head>
   <body data-page="articles">
-    <a class="skip-link" href="#main-content">跳转到主要内容</a>
+    <a class="skip-link" href="#main-content" data-i18n="skip">跳转到主要内容</a>
 
     <div class="site-shell">
       <header class="site-header">
@@ -35,11 +37,33 @@ layout: null
         </nav>
         <div class="site-controls">
           <button class="control-button" id="language-toggle" type="button" aria-label="Switch to English">
+            <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21M12 3c-2.4 2.5-3.6 5.5-3.6 9S9.6 18.5 12 21"></path>
+            </svg>
             <span class="language-label-long">中 / EN</span><span class="mobile-only">文</span>
           </button>
           <button class="control-button" id="theme-toggle" type="button" aria-label="切换到亮色主题" aria-pressed="true">
-            <span class="theme-icon" aria-hidden="true">☀</span>
+            <span class="theme-icon" aria-hidden="true">
+              <svg class="control-icon theme-icon-sun" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+              </svg>
+              <svg class="control-icon theme-icon-moon" viewBox="0 0 24 24">
+                <path d="M20.5 14.5A7.5 7.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"></path>
+              </svg>
+            </span>
+            <span class="theme-label" data-theme-label>SUN</span>
           </button>
+          <a class="control-button icon-button github-control" href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer" aria-label="AustinElite GitHub" title="AustinElite GitHub">
+            <svg class="control-icon github-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.76-.24.76-.54v-1.9c-3.1.68-3.76-1.32-3.76-1.32-.5-1.28-1.24-1.62-1.24-1.62-1.02-.7.08-.69.08-.69 1.12.08 1.72 1.16 1.72 1.16 1 .1.24 2.63 3.16 1.88.1-.72.4-1.21.72-1.49-2.48-.28-5.08-1.24-5.08-5.52 0-1.22.44-2.22 1.16-3-.12-.28-.5-1.42.1-2.96 0 0 .94-.3 3.08 1.14.9-.25 1.86-.38 2.82-.38s1.92.13 2.82.38c2.14-1.44 3.08-1.14 3.08-1.14.6 1.54.22 2.68.1 2.96.72.78 1.16 1.78 1.16 3 0 4.3-2.6 5.24-5.08 5.52.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54A11.2 11.2 0 0 0 12 .8Z"></path>
+            </svg>
+            <span>GH</span>
+          </a>
+          <a class="write-button" href="/admin/">
+            <span aria-hidden="true">✎</span><span data-i18n="write.label">写作 / 上传</span>
+          </a>
           <button class="menu-button" id="menu-toggle" type="button" aria-label="打开导航菜单" aria-expanded="false">
             <span class="menu-icon" aria-hidden="true"></span>
           </button>
@@ -51,6 +75,7 @@ layout: null
         <a href="/#work" data-i18n="nav.work">项目</a>
         <a href="/articles/" data-i18n="nav.articles">文章</a>
         <a href="/#contact" data-i18n="nav.contact">联系</a>
+        <a href="/admin/" data-i18n="write.label">写作 / 上传</a>
       </nav>
 
       <main id="main-content">
@@ -85,33 +110,108 @@ layout: null
           </div>
 
           <div class="articles-page-grid" id="article-grid">
-            {% for post in site.posts %}
-              <article
-                class="article-card"
-                data-tags="{% for tag in post.tags %}{{ tag | slugify }}{% unless forloop.last %} {% endunless %}{% endfor %}"
-                data-title-zh="{{ post.title | escape }}"
-                data-title-en="{{ post.title_en | default: post.title | escape }}"
-                data-description-zh="{{ post.description | escape }}"
-                data-description-en="{{ post.description_en | default: post.description | escape }}"
-              >
-                <a href="{{ post.url }}">
-                  <img src="{{ post.cover }}" alt="{{ post.title }} 封面" width="1200" height="630">
-                </a>
-                <div class="article-card-copy">
-                  <div class="article-meta">
-                    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y.%m.%d" }}</time>
-                    <span>{{ post.read_time | default: 6 }} <span data-i18n="articles.readTime">分钟阅读</span></span>
-                  </div>
-                  <h2><a href="{{ post.url }}" data-card-title>{{ post.title }}</a></h2>
-                  <p data-card-description>{{ post.description }}</p>
-                  <ul class="tag-list" style="margin-top:1.2rem">
-                    {% for tag in post.tags limit: 4 %}
-                      <li>{{ tag }}</li>
-                    {% endfor %}
-                  </ul>
+            <article
+              class="article-card"
+              data-tags="java ai-agent spring-ai system-design"
+              data-title-zh="????? AI Agent ??"
+              data-title-en="Building Reliable AI Agent Backends"
+              data-description-zh="????????????????????? AI Agent ????????"
+              data-description-en="A production-minded architecture for tool use, state and observability."
+            >
+              <a href="/articles/building-reliable-ai-agent-backends/">
+                <img src="/assets/articles/agent-backends/cover.svg" alt="????? AI Agent ????" width="1200" height="630">
+              </a>
+              <div class="article-card-copy">
+                <div class="article-meta">
+                  <time datetime="2026-06-08T09:00:00+08:00">2026.06.08</time>
+                  <span>9 <span data-i18n="articles.readTime">????</span></span>
                 </div>
-              </article>
-            {% endfor %}
+                <h2><a href="/articles/building-reliable-ai-agent-backends/" data-card-title>????? AI Agent ??</a></h2>
+                <p data-card-description>????????????????????? AI Agent ????????</p>
+                <ul class="tag-list" style="margin-top:1.2rem">
+                  <li>Java</li>
+                  <li>AI Agent</li>
+                  <li>Spring AI</li>
+                  <li>System Design</li>
+                </ul>
+              </div>
+            </article>
+            <article
+              class="article-card"
+              data-tags="java spring-boot kafka architecture"
+              data-title-zh="Spring Boot ????????"
+              data-title-en="Event-Driven Architecture with Spring Boot"
+              data-description-zh="?? Kafka?Outbox Pattern ??????????????????"
+              data-description-en="Reliable asynchronous workflows with Kafka, the Outbox Pattern and idempotent consumers."
+            >
+              <a href="/articles/event-driven-architecture-with-spring-boot/">
+                <img src="/assets/articles/event-driven/cover.svg" alt="Spring Boot ??????????" width="1200" height="630">
+              </a>
+              <div class="article-card-copy">
+                <div class="article-meta">
+                  <time datetime="2026-05-22T09:00:00+08:00">2026.05.22</time>
+                  <span>7 <span data-i18n="articles.readTime">????</span></span>
+                </div>
+                <h2><a href="/articles/event-driven-architecture-with-spring-boot/" data-card-title>Spring Boot ????????</a></h2>
+                <p data-card-description>?? Kafka?Outbox Pattern ??????????????????</p>
+                <ul class="tag-list" style="margin-top:1.2rem">
+                  <li>Java</li>
+                  <li>Spring Boot</li>
+                  <li>Kafka</li>
+                  <li>Architecture</li>
+                </ul>
+              </div>
+            </article>
+            <article
+              class="article-card"
+              data-tags="ai-agent llm workflow"
+              data-title-zh="??????? AI Agent ???"
+              data-title-en="Designing Effective AI Agent Workflows"
+              data-description-zh="?????????????? Agent ????????????"
+              data-description-en="A controlled agent loop for planning, action, observation and retry."
+            >
+              <a href="/articles/designing-effective-ai-agent-workflows/">
+                <img src="/assets/articles/agent-workflows/cover.svg" alt="??????? AI Agent ?????" width="1200" height="630">
+              </a>
+              <div class="article-card-copy">
+                <div class="article-meta">
+                  <time datetime="2026-04-18T09:00:00+08:00">2026.04.18</time>
+                  <span>8 <span data-i18n="articles.readTime">????</span></span>
+                </div>
+                <h2><a href="/articles/designing-effective-ai-agent-workflows/" data-card-title>??????? AI Agent ???</a></h2>
+                <p data-card-description>?????????????? Agent ????????????</p>
+                <ul class="tag-list" style="margin-top:1.2rem">
+                  <li>AI Agent</li>
+                  <li>LLM</li>
+                  <li>Workflow</li>
+                </ul>
+              </div>
+            </article>
+            <article
+              class="article-card"
+              data-tags="observability java system-design"
+              data-title-zh="???????????"
+              data-title-en="Observability for Modern Backend Systems"
+              data-description-zh="????????????????????????????"
+              data-description-en="Unifying logs, metrics and traces to make complex systems diagnosable."
+            >
+              <a href="/articles/observability-for-modern-backend-systems/">
+                <img src="/assets/articles/observability/cover.svg" alt="?????????????" width="1200" height="630">
+              </a>
+              <div class="article-card-copy">
+                <div class="article-meta">
+                  <time datetime="2026-04-06T09:00:00+08:00">2026.04.06</time>
+                  <span>6 <span data-i18n="articles.readTime">????</span></span>
+                </div>
+                <h2><a href="/articles/observability-for-modern-backend-systems/" data-card-title>???????????</a></h2>
+                <p data-card-description>????????????????????????????</p>
+                <ul class="tag-list" style="margin-top:1.2rem">
+                  <li>Observability</li>
+                  <li>Java</li>
+                  <li>System Design</li>
+                </ul>
+              </div>
+            </article>
 
             <div class="empty-state" id="article-empty">
               <p data-i18n="articles.empty">没有找到匹配的文章。</p>
@@ -121,17 +221,16 @@ layout: null
       </main>
 
       <footer class="site-footer">
-        <div class="footer-signature"><span aria-hidden="true">+</span><strong>AUSTINELITE</strong></div>
-        <span class="footer-center">CHINA / UTC+08:00</span>
+        <strong>AUSTINELITE</strong>
+        <span class="footer-center" data-i18n="articles.logLabel">技术日志</span>
         <div class="footer-links">
           <a href="https://github.com/AustinElite" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="/admin/" data-i18n="footer.console">Console</a>
           <span>© <span data-current-year>2026</span></span>
         </div>
       </footer>
     </div>
 
-    <script src="/assets/js/main.js?v=20260711-github-repos"></script>
+    <script src="/assets/js/main.js"></script>
     <script src="/assets/js/articles.js"></script>
   </body>
 </html>

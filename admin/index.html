@@ -1,19 +1,24 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-CN" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#090909">
+    <meta name="theme-color" content="#05070b">
     <meta name="robots" content="noindex,nofollow">
     <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="/assets/css/main.css?v=20260711-github-repos">
-    <link rel="stylesheet" href="/assets/css/midnight.css?v=20260711-midnight">
-    <link rel="stylesheet" href="/assets/css/admin.css?v=20260711-midnight">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/admin.css">
     <title>AustinElite 写作控制台</title>
     <script>
       (() => {
-        const saved = localStorage.getItem("austinelite-theme");
-        document.documentElement.dataset.theme = saved || "dark";
+        const savedTheme = localStorage.getItem("austinelite-theme");
+        const prefersLight = matchMedia("(prefers-color-scheme: light)").matches;
+        const theme = savedTheme || (prefersLight ? "light" : "dark");
+        const savedLanguage = localStorage.getItem("austinelite-language");
+        const language = savedLanguage || (navigator.language.toLowerCase().startsWith("zh") ? "zh" : "en");
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.dataset.language = language;
+        document.documentElement.lang = language === "zh" ? "zh-CN" : "en";
       })();
     </script>
   </head>
@@ -40,10 +45,23 @@
         </div>
         <div class="admin-controls">
           <button class="control-button" id="language-toggle" type="button" aria-label="Switch to English">
-            中 / EN
+            <svg class="control-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M3 12h18M12 3c2.4 2.5 3.6 5.5 3.6 9S14.4 18.5 12 21M12 3c-2.4 2.5-3.6 5.5-3.6 9S9.6 18.5 12 21"></path>
+            </svg>
+            <span class="language-label-long">中 / EN</span>
           </button>
           <button class="control-button" id="theme-toggle" type="button" aria-label="切换到亮色主题" aria-pressed="true">
-            <span class="theme-icon" aria-hidden="true">☀</span>
+            <span class="theme-icon" aria-hidden="true">
+              <svg class="control-icon theme-icon-sun" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+              </svg>
+              <svg class="control-icon theme-icon-moon" viewBox="0 0 24 24">
+                <path d="M20.5 14.5A7.5 7.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"></path>
+              </svg>
+            </span>
+            <span class="theme-label" data-theme-label>SUN</span>
           </button>
         </div>
       </header>
@@ -214,7 +232,7 @@ public interface AgentTool {
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
-    <script src="/assets/js/main.js?v=20260711-github-repos"></script>
+    <script src="/assets/js/main.js"></script>
     <script src="/assets/js/admin.js"></script>
   </body>
 </html>

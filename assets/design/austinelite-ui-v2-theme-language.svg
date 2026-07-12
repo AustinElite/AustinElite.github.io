@@ -1,0 +1,228 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1400" viewBox="0 0 1600 1400" fill="none">
+  <defs>
+    <linearGradient id="darkHero" x1="80" y1="120" x2="760" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070b"/>
+      <stop offset="0.58" stop-color="#071426"/>
+      <stop offset="1" stop-color="#102f57"/>
+    </linearGradient>
+    <radialGradient id="darkGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(645 320) rotate(90) scale(230)">
+      <stop stop-color="#00e5ff" stop-opacity="0.55"/>
+      <stop offset="0.48" stop-color="#1267ff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#1267ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lightHero" x1="840" y1="120" x2="1520" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7f7f4"/>
+      <stop offset="0.58" stop-color="#eef2f7"/>
+      <stop offset="1" stop-color="#e7d9f5"/>
+    </linearGradient>
+    <radialGradient id="lightGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1404 320) rotate(90) scale(230)">
+      <stop stop-color="#8c2ee0" stop-opacity="0.26"/>
+      <stop offset="0.52" stop-color="#8c2ee0" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#8c2ee0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mobileDark" x1="290" y1="820" x2="560" y2="1250" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#05070b"/>
+      <stop offset="0.58" stop-color="#071426"/>
+      <stop offset="1" stop-color="#102f57"/>
+    </linearGradient>
+    <linearGradient id="mobileLight" x1="1040" y1="820" x2="1310" y2="1250" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f7f7f4"/>
+      <stop offset="0.55" stop-color="#eef2f7"/>
+      <stop offset="1" stop-color="#eadcf7"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .page { fill: #eeeeeb; }
+      .darkText { fill: #f7fbff; }
+      .darkSoft { fill: #b8cce2; }
+      .darkMuted { fill: #83a1c2; }
+      .lightText { fill: #111111; }
+      .lightSoft { fill: #3f3f3f; }
+      .lightMuted { fill: #6b6b6b; }
+      .blue { fill: #1267ff; }
+      .cyan { fill: #00e5ff; }
+      .purple { fill: #8c2ee0; }
+      .lineDark { stroke: rgba(0,229,255,.26); stroke-width: 1; }
+      .lineLight { stroke: rgba(140,46,224,.18); stroke-width: 1; }
+      .sans { font-family: "Space Grotesk", "Segoe UI", Arial, sans-serif; }
+      .mono { font-family: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace; }
+      .title { font-size: 34px; font-weight: 700; }
+      .label { font-size: 14px; letter-spacing: .06em; }
+      .body { font-size: 18px; }
+      .heroTitle { font-size: 74px; font-weight: 800; letter-spacing: .02em; }
+      .mobileHero { font-size: 34px; font-weight: 800; letter-spacing: .02em; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1400" class="page"/>
+  <text x="80" y="70" class="sans title lightText">AustinElite UI V2</text>
+  <text x="80" y="96" class="mono label lightMuted">THEME SWITCH + LANGUAGE SWITCH / GITHUB PAGES HOMEPAGE</text>
+
+  <g transform="translate(80 120)" filter="url(#shadow)">
+    <rect width="680" height="560" rx="18" fill="url(#darkHero)"/>
+    <rect width="680" height="560" rx="18" fill="url(#darkGlow)"/>
+    <g opacity=".28">
+      <path d="M0 80H680M0 160H680M0 240H680M0 320H680M0 400H680M0 480H680" class="lineDark"/>
+      <path d="M85 0V560M170 0V560M255 0V560M340 0V560M425 0V560M510 0V560M595 0V560" class="lineDark"/>
+    </g>
+    <rect x="0" y="0" width="680" height="58" rx="18" fill="rgba(2,7,15,.86)"/>
+    <path d="M0 58H680" class="lineDark"/>
+    <text x="30" y="37" class="sans darkText" font-size="18" font-weight="800">AUSTINELITE</text>
+    <text x="260" y="36" class="mono label darkSoft">ABOUT</text>
+    <text x="330" y="36" class="mono label darkSoft">WORK</text>
+    <text x="392" y="36" class="mono label darkSoft">ARTICLES</text>
+    <rect x="492" y="16" width="66" height="28" rx="6" fill="rgba(0,229,255,.08)" stroke="rgba(0,229,255,.42)"/>
+    <circle cx="509" cy="30" r="7" stroke="#f7fbff"/>
+    <path d="M502 30h14M509 23c2 2 3 4.2 3 7s-1 5-3 7M509 23c-2 2-3 4.2-3 7s1 5 3 7" stroke="#f7fbff" stroke-linecap="round"/>
+    <text x="524" y="36" class="mono label darkText">EN</text>
+    <rect x="566" y="16" width="62" height="28" rx="6" fill="rgba(0,229,255,.08)" stroke="rgba(0,229,255,.42)"/>
+    <circle cx="583" cy="30" r="5" stroke="#f7fbff"/>
+    <path d="M583 20v4M583 36v4M573 30h4M589 30h4M576 23l3 3M587 34l3 3M576 37l3-3M587 26l3-3" stroke="#f7fbff" stroke-linecap="round"/>
+    <text x="596" y="36" class="mono label darkText">SUN</text>
+    <rect x="636" y="16" width="34" height="28" rx="6" fill="#1267ff"/>
+    <path d="M653 21a9 9 0 0 0-2.9 17c.45.08.62-.19.62-.43v-1.45c-2.5.55-3.03-1.05-3.03-1.05-.41-1.02-1-1.3-1-1.3-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.36 2.1.97 2.62.74.08-.58.31-.97.57-1.19-1.98-.22-4.08-.99-4.08-4.42 0-.98.35-1.78.93-2.4-.1-.23-.4-1.14.08-2.38 0 0 .76-.24 2.47.91.72-.2 1.5-.3 2.26-.3s1.54.1 2.26.3c1.71-1.15 2.47-.91 2.47-.91.48 1.24.18 2.15.08 2.38.58.62.93 1.42.93 2.4 0 3.45-2.1 4.2-4.09 4.42.32.28.61.82.61 1.66v2.47c0 .24.16.52.62.43A9 9 0 0 0 653 21Z" fill="#fff"/>
+
+    <text x="36" y="132" class="mono label cyan">// SYSTEM ONLINE</text>
+    <text x="36" y="226" class="sans heroTitle darkText">AUSTINELITE</text>
+    <text x="36" y="270" class="mono label darkText">JAVA BACKEND ENGINEER</text>
+    <text x="36" y="302" class="mono label cyan">AI AGENT DEVELOPER</text>
+    <text x="36" y="352" class="sans body darkSoft">Build systems that scale.</text>
+    <text x="36" y="378" class="sans body darkSoft">Build intelligence that matters.</text>
+    <rect x="36" y="420" width="132" height="42" rx="5" fill="#1267ff"/>
+    <text x="63" y="447" class="sans body darkText">GitHub</text>
+    <rect x="180" y="420" width="132" height="42" rx="5" fill="rgba(2,7,15,.72)" stroke="rgba(0,229,255,.36)"/>
+    <text x="216" y="447" class="sans body darkText">Contact</text>
+
+    <g transform="translate(404 324)">
+      <rect width="226" height="156" rx="8" fill="rgba(2,8,18,.82)" stroke="rgba(0,229,255,.48)"/>
+      <circle cx="22" cy="28" r="5" class="cyan"/>
+      <text x="38" y="33" class="mono label darkSoft">DARK MODE</text>
+      <path d="M18 52H208" class="lineDark"/>
+      <text x="18" y="82" class="mono label darkMuted">LANGUAGE</text>
+      <text x="112" y="82" class="mono label darkText">English</text>
+      <text x="18" y="112" class="mono label darkMuted">THEME</text>
+      <text x="112" y="112" class="mono label darkText">Night</text>
+      <text x="18" y="142" class="mono label darkMuted">SAVED</text>
+      <text x="112" y="142" class="mono label darkText">localStorage</text>
+    </g>
+  </g>
+
+  <g transform="translate(840 120)" filter="url(#shadow)">
+    <rect width="680" height="560" rx="18" fill="url(#lightHero)"/>
+    <rect width="680" height="560" rx="18" fill="url(#lightGlow)"/>
+    <g opacity="0">
+      <path d="M0 80H680M0 160H680M0 240H680M0 320H680M0 400H680M0 480H680" class="lineLight"/>
+      <path d="M85 0V560M170 0V560M255 0V560M340 0V560M425 0V560M510 0V560M595 0V560" class="lineLight"/>
+    </g>
+    <rect x="0" y="0" width="680" height="58" rx="18" fill="rgba(244,244,242,.9)"/>
+    <path d="M0 58H680" class="lineLight"/>
+    <text x="30" y="37" class="sans lightText" font-size="18" font-weight="800">AUSTINELITE</text>
+    <text x="250" y="36" class="mono label lightSoft">关于</text>
+    <text x="310" y="36" class="mono label lightSoft">项目</text>
+    <text x="370" y="36" class="mono label lightSoft">文章</text>
+    <rect x="492" y="16" width="66" height="28" rx="6" fill="rgba(255,255,255,.6)" stroke="rgba(9,9,9,.22)"/>
+    <circle cx="509" cy="30" r="7" stroke="#111"/>
+    <path d="M502 30h14M509 23c2 2 3 4.2 3 7s-1 5-3 7M509 23c-2 2-3 4.2-3 7s1 5 3 7" stroke="#111" stroke-linecap="round"/>
+    <text x="524" y="36" class="mono label lightText">中文</text>
+    <rect x="566" y="16" width="62" height="28" rx="6" fill="rgba(255,255,255,.6)" stroke="rgba(9,9,9,.22)"/>
+    <path d="M590 34a8 8 0 0 1-11-11 9 9 0 1 0 11 11Z" stroke="#111" stroke-linejoin="round"/>
+    <text x="602" y="36" class="mono label lightText">MOON</text>
+    <rect x="636" y="16" width="34" height="28" rx="6" fill="#8c2ee0"/>
+    <path d="M653 21a9 9 0 0 0-2.9 17c.45.08.62-.19.62-.43v-1.45c-2.5.55-3.03-1.05-3.03-1.05-.41-1.02-1-1.3-1-1.3-.82-.56.06-.55.06-.55.9.06 1.38.93 1.38.93.8 1.36 2.1.97 2.62.74.08-.58.31-.97.57-1.19-1.98-.22-4.08-.99-4.08-4.42 0-.98.35-1.78.93-2.4-.1-.23-.4-1.14.08-2.38 0 0 .76-.24 2.47.91.72-.2 1.5-.3 2.26-.3s1.54.1 2.26.3c1.71-1.15 2.47-.91 2.47-.91.48 1.24.18 2.15.08 2.38.58.62.93 1.42.93 2.4 0 3.45-2.1 4.2-4.09 4.42.32.28.61.82.61 1.66v2.47c0 .24.16.52.62.43A9 9 0 0 0 653 21Z" fill="#fff"/>
+
+    <text x="36" y="132" class="mono label purple">// 系统在线</text>
+    <text x="36" y="226" class="sans heroTitle lightText">AUSTINELITE</text>
+    <text x="36" y="270" class="mono label lightText">JAVA 后端工程师</text>
+    <text x="36" y="302" class="mono label purple">AI AGENT 开发者</text>
+    <text x="36" y="352" class="sans body lightSoft">构建可扩展的系统，</text>
+    <text x="36" y="378" class="sans body lightSoft">创造真正有价值的智能。</text>
+    <rect x="36" y="420" width="132" height="42" rx="5" fill="#8c2ee0"/>
+    <text x="63" y="447" class="sans body darkText">GitHub</text>
+    <rect x="180" y="420" width="132" height="42" rx="5" fill="rgba(255,255,255,.62)" stroke="rgba(9,9,9,.2)"/>
+    <text x="226" y="447" class="sans body lightText">联系</text>
+
+    <g transform="translate(404 324)">
+      <rect width="226" height="156" rx="8" fill="rgba(255,255,255,.76)" stroke="rgba(9,9,9,.16)"/>
+      <circle cx="22" cy="28" r="5" class="purple"/>
+      <text x="38" y="33" class="mono label lightSoft">LIGHT MODE</text>
+      <path d="M18 52H208" class="lineLight"/>
+      <text x="18" y="82" class="mono label lightMuted">LANGUAGE</text>
+      <text x="112" y="82" class="mono label lightText">中文</text>
+      <text x="18" y="112" class="mono label lightMuted">THEME</text>
+      <text x="112" y="112" class="mono label lightText">Day</text>
+      <text x="18" y="142" class="mono label lightMuted">SAVED</text>
+      <text x="112" y="142" class="mono label lightText">localStorage</text>
+    </g>
+  </g>
+
+  <g transform="translate(80 740)">
+    <text x="0" y="0" class="sans title lightText">Interaction States</text>
+    <text x="0" y="28" class="mono label lightMuted">Same layout, four readable states: EN/ZH x DAY/NIGHT</text>
+  </g>
+
+  <g transform="translate(290 820)" filter="url(#shadow)">
+    <rect width="270" height="480" rx="28" fill="#03070d"/>
+    <rect x="12" y="16" width="246" height="448" rx="20" fill="url(#mobileDark)"/>
+    <rect x="12" y="16" width="246" height="448" rx="20" fill="url(#darkGlow)" opacity=".72"/>
+    <rect x="12" y="16" width="246" height="48" rx="20" fill="rgba(2,7,15,.86)"/>
+    <text x="32" y="47" class="sans darkText" font-size="14" font-weight="800">AUSTINELITE</text>
+    <rect x="142" y="30" width="42" height="22" rx="5" fill="rgba(0,229,255,.08)" stroke="rgba(0,229,255,.42)"/>
+    <circle cx="154" cy="41" r="5" stroke="#f7fbff"/>
+    <path d="M149 41h10M154 36c1.4 1.5 2 3 2 5s-.6 3.5-2 5M154 36c-1.4 1.5-2 3-2 5s.6 3.5 2 5" stroke="#f7fbff" stroke-linecap="round"/>
+    <text x="164" y="45" class="mono" font-size="10" fill="#f7fbff">EN</text>
+    <rect x="190" y="30" width="32" height="22" rx="5" fill="rgba(0,229,255,.08)" stroke="rgba(0,229,255,.42)"/>
+    <circle cx="206" cy="41" r="5" stroke="#f7fbff"/>
+    <path d="M206 33v3M206 46v3M198 41h3M211 41h3M200 35l2 2M210 45l2 2M200 47l2-2M210 37l2-2" stroke="#f7fbff" stroke-linecap="round"/>
+    <path d="M228 36H244M228 44H244" stroke="#f7fbff" stroke-width="2"/>
+    <text x="32" y="118" class="mono" font-size="10" fill="#00e5ff">// SYSTEM ONLINE</text>
+    <text x="32" y="178" class="sans mobileHero darkText">AUSTIN</text>
+    <text x="32" y="220" class="sans mobileHero darkText">ELITE</text>
+    <text x="32" y="258" class="mono" font-size="11" fill="#f7fbff">JAVA BACKEND</text>
+    <text x="32" y="280" class="mono" font-size="11" fill="#00e5ff">AI AGENT BUILDER</text>
+    <rect x="32" y="326" width="96" height="36" rx="5" fill="#1267ff"/>
+    <text x="54" y="349" class="sans" font-size="14" fill="#f7fbff">GitHub</text>
+    <rect x="32" y="386" width="206" height="58" rx="8" fill="rgba(2,8,18,.82)" stroke="rgba(0,229,255,.4)"/>
+    <text x="48" y="410" class="mono" font-size="10" fill="#83a1c2">CURRENT</text>
+    <text x="48" y="432" class="mono" font-size="10" fill="#f7fbff">English / Night</text>
+  </g>
+
+  <g transform="translate(1040 820)" filter="url(#shadow)">
+    <rect width="270" height="480" rx="28" fill="#d8d8d2"/>
+    <rect x="12" y="16" width="246" height="448" rx="20" fill="url(#mobileLight)"/>
+    <rect x="12" y="16" width="246" height="48" rx="20" fill="rgba(244,244,242,.9)"/>
+    <text x="32" y="47" class="sans lightText" font-size="14" font-weight="800">AUSTINELITE</text>
+    <rect x="142" y="30" width="42" height="22" rx="5" fill="rgba(255,255,255,.65)" stroke="rgba(9,9,9,.22)"/>
+    <circle cx="154" cy="41" r="5" stroke="#111"/>
+    <path d="M149 41h10M154 36c1.4 1.5 2 3 2 5s-.6 3.5-2 5M154 36c-1.4 1.5-2 3-2 5s.6 3.5 2 5" stroke="#111" stroke-linecap="round"/>
+    <text x="164" y="45" class="mono" font-size="10" fill="#111">中</text>
+    <rect x="190" y="30" width="32" height="22" rx="5" fill="rgba(255,255,255,.65)" stroke="rgba(9,9,9,.22)"/>
+    <path d="M211 45a7 7 0 0 1-10-10 8 8 0 1 0 10 10Z" stroke="#111" stroke-linejoin="round"/>
+    <path d="M228 36H244M228 44H244" stroke="#111" stroke-width="2"/>
+    <text x="32" y="118" class="mono" font-size="10" fill="#8c2ee0">// 系统在线</text>
+    <text x="32" y="178" class="sans mobileHero lightText">AUSTIN</text>
+    <text x="32" y="220" class="sans mobileHero lightText">ELITE</text>
+    <text x="32" y="258" class="mono" font-size="11" fill="#111">JAVA 后端</text>
+    <text x="32" y="280" class="mono" font-size="11" fill="#8c2ee0">AI AGENT 开发者</text>
+    <rect x="32" y="326" width="96" height="36" rx="5" fill="#8c2ee0"/>
+    <text x="54" y="349" class="sans" font-size="14" fill="#fff">GitHub</text>
+    <rect x="32" y="386" width="206" height="58" rx="8" fill="rgba(255,255,255,.74)" stroke="rgba(9,9,9,.16)"/>
+    <text x="48" y="410" class="mono" font-size="10" fill="#6b6b6b">CURRENT</text>
+    <text x="48" y="432" class="mono" font-size="10" fill="#111">Chinese / Day</text>
+  </g>
+
+  <g transform="translate(650 850)">
+    <rect width="300" height="360" rx="16" fill="#ffffff" stroke="rgba(9,9,9,.12)"/>
+    <text x="28" y="48" class="sans" font-size="22" font-weight="700" fill="#111">Control Logic</text>
+    <path d="M28 76H272" stroke="rgba(9,9,9,.14)"/>
+    <text x="28" y="116" class="mono" font-size="13" fill="#6b6b6b">LANGUAGE BUTTON</text>
+    <text x="28" y="142" class="sans" font-size="17" fill="#111">ZH text -> button shows EN</text>
+    <text x="28" y="168" class="sans" font-size="17" fill="#111">EN text -> button shows 中文</text>
+    <text x="28" y="214" class="mono" font-size="13" fill="#6b6b6b">THEME BUTTON</text>
+    <text x="28" y="240" class="sans" font-size="17" fill="#111">Night -> shows Sun</text>
+    <text x="28" y="266" class="sans" font-size="17" fill="#111">Day -> shows Moon</text>
+    <text x="28" y="312" class="mono" font-size="13" fill="#6b6b6b">PERSISTENCE</text>
+    <text x="28" y="338" class="sans" font-size="17" fill="#111">Saved in localStorage</text>
+  </g>
+</svg>
