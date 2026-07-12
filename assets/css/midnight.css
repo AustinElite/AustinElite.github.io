@@ -1774,6 +1774,18 @@ body[data-page="home"] .hero-image {
   opacity: 0.96;
 }
 
+body[data-page="home"] .hero-image-light {
+  display: none;
+}
+
+:root[data-theme="light"] body[data-page="home"] .hero-image-night {
+  display: none;
+}
+
+:root[data-theme="light"] body[data-page="home"] .hero-image-light {
+  display: block;
+}
+
 body[data-page="home"] .star-canvas {
   z-index: -2;
   opacity: 0.72;
@@ -2332,8 +2344,8 @@ body[data-page="home"] .site-footer {
 }
 
 :root[data-theme="light"] body[data-page="home"] .hero-image {
-  opacity: 0.86;
-  filter: invert(1) hue-rotate(180deg) brightness(1.12) contrast(0.9) saturate(0.8);
+  opacity: 1;
+  filter: none;
 }
 
 :root[data-theme="light"] body[data-page="home"] .star-canvas {
