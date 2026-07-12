@@ -2328,14 +2328,12 @@ body[data-page="home"] .site-footer {
 }
 
 :root[data-theme="light"] body[data-page="home"] .hero::before {
-  background:
-    radial-gradient(circle at 78% 34%, rgba(140, 46, 224, 0.08), transparent 18rem),
-    linear-gradient(90deg, rgba(244, 244, 242, 0.18), rgba(244, 244, 242, 0.46));
+  display: none;
 }
 
 :root[data-theme="light"] body[data-page="home"] .hero-image {
-  opacity: 0.42;
-  filter: grayscale(0.25) contrast(1.05) saturate(0.9);
+  opacity: 0.82;
+  filter: contrast(1.06) saturate(1.02);
 }
 
 :root[data-theme="light"] body[data-page="home"] .star-canvas {
@@ -2366,6 +2364,16 @@ body[data-page="home"] .site-footer {
 :root[data-theme="light"] body[data-page="home"] .feed-track,
 :root[data-theme="light"] body[data-page="home"] .status-grid dd {
   color: var(--text-soft);
+}
+
+:root[data-theme="light"] body[data-page="home"] .fact dt {
+  color: var(--violet);
+  font-weight: 700;
+}
+
+:root[data-theme="light"] body[data-page="home"] .fact dd {
+  color: var(--text);
+  font-weight: 650;
 }
 
 :root[data-theme="light"] body[data-page="home"] .status-panel,
