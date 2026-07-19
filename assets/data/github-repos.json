@@ -1,8 +1,25 @@
 {
   "owner": "AustinElite",
-  "generatedAt": "2026-07-18T19:35:15.943Z",
+  "generatedAt": "2026-07-19T03:59:14.413Z",
   "source": "https://api.github.com/users/AustinElite/repos",
   "repos": [
+    {
+      "name": "study-haven-web",
+      "full_name": "AustinElite/study-haven-web",
+      "description": "Study Haven Web 是一个静态网页版沉浸式自习室。它不依赖后端服务，打开 index.html 就可以体验，也可以通过本地静态服务器预览后再上传到 GitHub Pages。  项目以“安静、稳定、少干扰”的学习空间为核心，把场景选择、专注计时、白噪音/音乐氛围、今日学习计划和本地状态存储整合到一个轻量页面中，适合个人自习、作品集展示或前端静态项目练习。",
+      "html_url": "https://github.com/AustinElite/study-haven-web",
+      "homepage": "",
+      "language": "JavaScript",
+      "topics": [],
+      "stargazers_count": 3,
+      "forks_count": 1,
+      "fork": false,
+      "archived": false,
+      "disabled": false,
+      "created_at": "2026-07-05T03:42:13Z",
+      "updated_at": "2026-07-19T03:28:54Z",
+      "pushed_at": "2026-07-05T03:53:09Z"
+    },
     {
       "name": "AustinElite.github.io",
       "full_name": "AustinElite/AustinElite.github.io",
@@ -17,8 +34,8 @@
       "archived": false,
       "disabled": false,
       "created_at": "2026-07-12T03:57:41Z",
-      "updated_at": "2026-07-18T13:53:26Z",
-      "pushed_at": "2026-07-18T13:53:16Z"
+      "updated_at": "2026-07-18T19:35:20Z",
+      "pushed_at": "2026-07-18T19:35:16Z"
     },
     {
       "name": "ai-market-radar",
@@ -36,23 +53,6 @@
       "created_at": "2026-06-03T05:12:55Z",
       "updated_at": "2026-07-16T13:19:01Z",
       "pushed_at": "2026-06-03T05:25:09Z"
-    },
-    {
-      "name": "study-haven-web",
-      "full_name": "AustinElite/study-haven-web",
-      "description": "Study Haven Web 是一个静态网页版沉浸式自习室。它不依赖后端服务，打开 index.html 就可以体验，也可以通过本地静态服务器预览后再上传到 GitHub Pages。  项目以“安静、稳定、少干扰”的学习空间为核心，把场景选择、专注计时、白噪音/音乐氛围、今日学习计划和本地状态存储整合到一个轻量页面中，适合个人自习、作品集展示或前端静态项目练习。",
-      "html_url": "https://github.com/AustinElite/study-haven-web",
-      "homepage": "",
-      "language": "JavaScript",
-      "topics": [],
-      "stargazers_count": 2,
-      "forks_count": 1,
-      "fork": false,
-      "archived": false,
-      "disabled": false,
-      "created_at": "2026-07-05T03:42:13Z",
-      "updated_at": "2026-07-05T13:21:04Z",
-      "pushed_at": "2026-07-05T03:53:09Z"
     },
     {
       "name": "Understand-Anything",
@@ -86,7 +86,7 @@
       "disabled": false,
       "created_at": "2026-04-19T11:28:33Z",
       "updated_at": "2026-06-03T06:19:24Z",
-      "pushed_at": "2026-07-18T02:09:20Z"
+      "pushed_at": "2026-07-19T02:26:25Z"
     },
     {
       "name": "github-readme-streak-stats",
